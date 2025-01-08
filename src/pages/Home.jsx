@@ -10,8 +10,10 @@ const Home = () => {
         PAGE HAS LOADED
       </div>
       {movie &&
-        movie.map((movie, index) => (
-          <div key={index}>{movie.original_title}</div>
+        movie.results.map((movie, index) => (
+          <div className="font-Montserrat" key={index}>
+            {movie.original_title}
+          </div>
         ))}
       {loading && (
         <div className=" flex justify-center items-center font-Montserrat">
