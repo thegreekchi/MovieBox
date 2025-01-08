@@ -7,7 +7,11 @@ export default {
     "./src/**/*.{html,jsx,js,tsx,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Montserrat:['Montserrat','sans-serif']
+      },
+    },
   },
   plugins: [
     scrollbarHide,
