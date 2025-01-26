@@ -5,6 +5,9 @@ const useFetch = (endpoint) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [randomMovie, setRandomMovie] = useState({});
+  // const randomMovie = data[Math.floor(Math.random() * data?.length)];
+  console.log("randomMovie:", randomMovie);
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const BASE_URL = "https://api.themoviedb.org/3/";
 
@@ -19,7 +22,10 @@ const useFetch = (endpoint) => {
       })
       .then((data) => {
         console.log("data fetched");
-        setData(data);
+        setData(data.results);
+        setRandomMovie(
+          data.results[Math.floor(Math.random() * data.results.length)]
+        );
         setError(null);
         setLoading(false);
       })
@@ -36,7 +42,7 @@ const useFetch = (endpoint) => {
     };
   }, [endpoint]);
 
-  return { data, error, loading };
+  return { data, error, loading, randomMovie };
 };
 
 export default useFetch;

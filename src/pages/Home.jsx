@@ -1,16 +1,18 @@
+import Hero from "../components/Hero";
 import useFetch from "../Hooks/UseFetch";
 
 const Home = () => {
   const { data: movie, loading, error } = useFetch("movie/popular");
-  console.log("Movies: ", movie);
+  // console.log("Movies: ", movie);
 
   return (
     <>
+      <Hero />
       <div className=" flex justify-center items-center font-Montserrat text-lg font-bold">
         PAGE HAS LOADED
       </div>
       {movie &&
-        movie.results.map((movie, index) => (
+        movie.map((movie, index) => (
           <div className="font-Montserrat" key={index}>
             {movie.original_title}
           </div>
