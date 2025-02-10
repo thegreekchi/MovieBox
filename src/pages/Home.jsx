@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import Row from "../components/Row";
 import useFetch from "../Hooks/UseFetch";
 
 const Home = () => {
@@ -8,7 +9,10 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <div className=" flex justify-center items-center font-Montserrat text-lg font-bold">
+      <Row title="Upcoming" url="movie/upcoming" />
+      <Row title="Popular" url="movie/popular" />
+      <Row title="Top Rated" url="movie/top_rated" />
+      <div className="flex justify-center items-center font-Montserrat text-lg font-bold">
         PAGE HAS LOADED
       </div>
       {movie &&
