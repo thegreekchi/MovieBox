@@ -2,8 +2,8 @@ import { MdOutlineSmartDisplay } from "react-icons/md";
 import useFetch from "../Hooks/UseFetch";
 
 const Hero = () => {
-  const { data: movie, randomMovie } = useFetch("movie/now_playing");
-  console.log("Now playing:", movie);
+  const { randomMovie } = useFetch("movie/now_playing");
+  console.log("Now playing:", randomMovie);
 
   return (
     <div className="relative">
