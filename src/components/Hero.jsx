@@ -31,7 +31,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10" />
           </div>
           <div>
-            <div className="absolute font-Montserrat text-white top-[10%] sm:top-[13%] md:top-[20%] px-5 py-3 sm:p-10">
+            <div className="absolute font-Montserrat text-white top-[13%] md:top-[20%] px-5 py-3 sm:p-10">
               <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%]">
                 {randomMovie.title}
               </h1>
