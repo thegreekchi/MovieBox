@@ -5,7 +5,7 @@ const useFetch = (endpoint) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [randomMovie, setRandomMovie] = useState({});
+  const [randomMovie, setRandomMovie] = useState(null);
   // const randomMovie = data[Math.floor(Math.random() * data?.length)];
   console.log("randomMovie:", randomMovie);
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;

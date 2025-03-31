@@ -15,7 +15,7 @@ const Row = ({ title, url }) => {
   };
   console.log(`${title}:`, movies);
   return (
-    <div className="bg-gradient-to-r to-blue-950 from-black via-zinc-900 pt-4">
+    <div className="bg-gradient-to-r via-[#000a23] from-black to-black pt-4">
       <div className=" w-[90%] mx-auto ">
         <h2 className="text-white font-bold text-base pb-2">{title}</h2>
         <div className="flex relative group duration-200">
