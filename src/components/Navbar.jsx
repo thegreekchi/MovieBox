@@ -1,16 +1,51 @@
 import { CiMenuBurger } from "react-icons/ci";
 import { VscAccount } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="font-Montserrat bg-black backdrop-blur-md p-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 ">
-      <div className="font-bold text-base md:text-lg md:col-span-2 leading-loose">
-        <span className="text-red-700">MOVIE </span>
-        <span className="text-blue-700">BOX</span>
+    <div className="font-Montserrat bg-black backdrop-blur-md p-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10">
+      <div className="font-bold text-base md:text-lg md:col-span-1 leading-loose cursor-pointer">
+        <Link to="/">
+          <span className="text-red-700">MOVIE </span>
+          <span className="text-blue-700">BOX</span>
+        </Link>
       </div>
-      <div className="flex justify-around items-center text-white md:col-span-2">
-        <div className="text-sm md:text-base cursor-pointer hover:text-orange-600 duration-200 hidden md:block">
+      <div className="flex justify-around items-center text-white md:col-span-3">
+        <div className="text-sm md:text-base cursor-pointer hover:text-orange-600 duration-200 hidden md:block group">
           Movies
+          <div className="group-hover:block hidden text-sm text-white bg-gradient-to-r from-blue-950 to-black fixed rounded-md">
+            <ul>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Popular Movies
+              </li>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Top Rated
+              </li>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Upcoming Movies
+              </li>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Now Playing
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-sm md:text-base cursor-pointer hover:text-orange-600 duration-200 hidden md:block group">
+          TV Shows
+          <div className="group-hover:block hidden text-sm text-white bg-gradient-to-r from-blue-950 to-black fixed rounded-md">
+            <ul>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Popular TV Shows
+              </li>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Top Rated TV Shows
+              </li>
+              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
+                Currently Airing
+              </li>
+            </ul>
+          </div>
         </div>
         <div>
           <input
