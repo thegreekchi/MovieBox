@@ -21,7 +21,7 @@ const Row = ({ title, url }) => {
       {loading && (
         <div className="bg-white pt-4">
           <div className="w-[90%] mx-auto p-5">
-            <div className="w-20 h-4 rounded-sm bg-black/80 relative overflow-hidden mb-6">
+            <div className="w-20 h-4 rounded-md bg-black/80 relative overflow-hidden mb-6">
               <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black via-white/70 to-black" />
             </div>
             <div className="flex gap-3 sm:gap-5 md:gap-6 w-full overflow-x-scroll scrollbar-hide">

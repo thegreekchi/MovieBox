@@ -17,7 +17,7 @@ const Movies = ({ movie }) => {
         />
       </div>
       <div className="text-black line-clamp-2 text-xs sm:text-sm font-Montserrat max-w-[80%] pt-3 sm:pt-4 pl-2 tracking-tight font-semibold">
-        {movie.title}
+        {movie.title || movie.original_name}
       </div>
     </div>
   );
