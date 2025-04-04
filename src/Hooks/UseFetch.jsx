@@ -14,34 +14,32 @@ const useFetch = (endpoint) => {
   useEffect(() => {
     const abort = new AbortController();
 
-    setTimeout(() => {
-      fetch(`${BASE_URL}${endpoint}?api_key=${API_KEY}`, {
-        signal: abort.signal,
+    fetch(`${BASE_URL}${endpoint}?api_key=${API_KEY}`, {
+      signal: abort.signal,
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Could not fetch Data");
+        }
+        return res.json();
       })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Could not fetch Data");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          console.log("data fetched");
-          setData(data.results);
-          setRandomMovie(
-            data.results[Math.floor(Math.random() * data.results.length)]
-          );
-          setError(null);
+      .then((data) => {
+        console.log("data fetched");
+        setData(data.results);
+        setRandomMovie(
+          data.results[Math.floor(Math.random() * data.results.length)]
+        );
+        setError(null);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          console.log("fetch aborted");
+        } else {
+          setError(error.message);
           setLoading(false);
-        })
-        .catch((error) => {
-          if (error.name === "AbortError") {
-            console.log("fetch aborted");
-          } else {
-            setError(error.message);
-            setLoading(false);
-          }
-        });
-    }, 20000);
+        }
+      });
     return () => {
       abort.abort();
     };

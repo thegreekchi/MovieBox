@@ -3,6 +3,7 @@ import { memo, useRef } from "react";
 import useFetch from "../Hooks/UseFetch";
 import Movies from "./Movies";
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 
 const Row = ({ title, url }) => {
   const { data: movies, loading, error } = useFetch(url);
@@ -38,14 +39,16 @@ const Row = ({ title, url }) => {
       )}
       {error && <h1>{error}</h1>}
       {movies && (
-        <div className="bg-gradient-to-r via-[#000a23] from-black to-black pt-4">
-          <div className=" w-[90%] mx-auto ">
-            <h2 className="text-white font-bold text-base pb-2">{title}</h2>
+        <div className="bg-slate-50 pt-2 sm:pt-3 ">
+          <div className=" w-[90%] mx-auto md:pt-4 pb-4 sm:pb-6">
+            <h2 className="text-black font-semibold text-base sm:text-lg pb-2 sm:tracking-wider tracking-wide">
+              {title}
+            </h2>
             <div className="flex relative group duration-200">
               <FaCircleChevronLeft
                 onClick={scrollLeft}
                 size={24}
-                className="text-[#6A7966] z-10 cursor-pointer absolute -left-3 top-[30%] hover:scale-110 duration-100 hidden group-hover:block rounded-full ring-2 ring-[#6C7C59] ring-offset-2 hover:ring-[#679267] hover:text-[#679267]"
+                className="text-[#679267] z-10 cursor-pointer absolute -left-3 top-[30%] hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
               />
               <div
                 className="flex gap-4 w-full overflow-x-scroll scrollbar-hide scroll-smooth p-1"
@@ -58,15 +61,17 @@ const Row = ({ title, url }) => {
               <FaCircleChevronRight
                 onClick={scrollRight}
                 size={24}
-                className="text-[#6A7966] z-10 cursor-pointer absolute -right-3 top-[30%] hover:scale-110 duration-100 hidden group-hover:block rounded-full ring-2 ring-[#6C7C59] ring-offset-2 hover:ring-[#679267] hover:text-[#679267]"
+                className="text-[#679267] z-10 cursor-pointer absolute -right-3 top-[30%] hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
               />
             </div>
-            <div className="text-center font-Montserrat p-2">
-              <button className="text-white text-sm sm:text-base border-2 bg-[#679267] hover:bg-[#6ea96e] duration-150 rounded-md px-2 hover:scale-95">
-                Load More
+            <div className="flex justify-center font-Montserrat p-2">
+              <button className="text-white font-light text-xs sm:text-sm border-2 bg-black/60 hover:bg-black/80 duration-200 rounded-md py-1 px-2 md:px-3 tracking-tight hover:scale-95 sm:hover:scale-90 flex justify-center items-center gap-2 group">
+                <span>More</span>
+                <FaArrowRight className=" group-hover:animate-pulse" />
               </button>
             </div>
           </div>
+          <div className="h-1 bg-gradient-to-r from-black/70 to-black/70 via-white" />
         </div>
       )}
     </>
