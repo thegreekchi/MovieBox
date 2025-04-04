@@ -41,7 +41,7 @@ const Row = ({ title, url }) => {
       {movies && (
         <div className="bg-slate-50 pt-2 sm:pt-3 ">
           <div className=" w-[90%] mx-auto md:pt-4 pb-4 sm:pb-6">
-            <h2 className="text-black font-semibold text-base sm:text-lg pb-2 sm:tracking-wider tracking-wide">
+            <h2 className="text-black font-semibold text-base sm:text-lg pb-2 sm:tracking-wider tracking-wide font-Montserrat">
               {title}
             </h2>
             <div className="flex relative group duration-200">
