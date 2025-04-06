@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import { memo } from "react";
+import ConicRow from "./ConicRow";
 
 const Movies = ({ movie }) => {
   return (
     <div className="">
       <div className="min-w-32 h-32 sm:min-w-40 sm:h-40 md:min-w-44 md:h-44 cursor-pointer relative shadow-lg shadow-black rounded-md">
+        <div className="absolute flex justify-center items-center bottom-[5%] right-[5%] ">
+          <ConicRow percentage={`${Math.round(movie.vote_average * 10)}`} />
+        </div>
         <div className="inset-0 absolute bg-black/20 opacity-0 hover:opacity-100  duration-300 rounded-md" />
         <img
           className="w-full h-full object-cover object-center rounded-md"
