@@ -1,5 +1,6 @@
 import { MdOutlineSmartDisplay } from "react-icons/md";
 import useFetch from "../Hooks/UseFetch";
+import Conic from "./Conic";
 
 const Hero = () => {
   const { randomMovie, loading, error } = useFetch("movie/now_playing");
@@ -46,9 +47,10 @@ const Hero = () => {
                 <MdOutlineSmartDisplay className="inline-block ml-2 text-lg sm:text-xl md:text-2xl" />
               </button>
             </div>
-            <div className="bg-white text-green-600 font-bold text-[50px] md:text-[90px] rounded-full p-2 flex justify-center items-center absolute bottom-20 right-10 sm:bottom-[15%] sm:right-[10%] opacity-40 backdrop-blur-sm">
-              {`${Math.round(randomMovie.vote_average * 10)}`}{" "}
-              <span className="sm:text-[40px] text-[20px]">%</span>
+            <div className="absolute flex justify-center items-center bottom-20 right-10 sm:bottom-[15%] sm:right-[10%]">
+              <Conic
+                percentage={`${Math.round(randomMovie.vote_average * 10)}`}
+              />
             </div>
           </div>
         </>
