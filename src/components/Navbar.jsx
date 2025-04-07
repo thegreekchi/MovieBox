@@ -1,72 +1,149 @@
+import { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import { CiMenuBurger } from "react-icons/ci";
+import { FaBookmark } from "react-icons/fa";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import { MdAccountCircle, MdLiveTv, MdLocalMovies } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const [subMenu, setSubMenu] = useState({
+    subMenu1: false,
+    subMenu2: false,
+  });
+  console.log(subMenu);
+
+  const toggleNav = () => {
+    setNav(!nav);
+    setSubMenu({
+      subMenu1: false,
+      subMenu2: false,
+    });
+  };
+  const toggleSubMenu = (submenu) => {
+    setSubMenu((prev) => ({
+      ...prev,
+      [submenu]: !prev[submenu],
+    }));
+  };
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+
+    return () => {
+      document.body.style.overflow = "scroll";
+    };
+  }, [nav]);
   return (
-    <div className="font-Montserrat bg-black backdrop-blur-md p-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10">
-      <div className="font-bold text-base md:text-lg md:col-span-1 leading-loose cursor-pointer">
-        <Link to="/">
-          <span className="text-red-700">MOVIE </span>
-          <span className="text-blue-700">BOX</span>
-        </Link>
-      </div>
-      <div className="flex justify-around items-center text-white md:col-span-3">
-        <div className="text-sm md:text-base cursor-pointer hover:text-orange-600 duration-200 hidden md:block group">
-          Movies
-          <div className="group-hover:block hidden text-sm text-white bg-gradient-to-r from-blue-950 to-black fixed rounded-md">
-            <ul>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Popular Movies
-              </li>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Top Rated
-              </li>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Upcoming Movies
-              </li>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Now Playing
-              </li>
-            </ul>
+    <div className="font-Montserrat">
+      <div className=" bg-black backdrop-blur-md p-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
+        <div className="font-bold text-sm md:text-lg md:col-span-1 leading-loose cursor-pointer">
+          <Link to="/">
+            <span className="text-red-700">MOVIE </span>
+            <span className="text-blue-700">BOX</span>
+          </Link>
+        </div>
+        <div className="flex justify-around items-center text-white md:col-span-3">
+          <div>
+            <form action="">
+              <input
+                type="search"
+                name=""
+                id=""
+                placeholder="search"
+                className=" bg-white/80 rounded-xl text-xs focus:outline-none text-black p-2 max-h-5 placeholder-black/80 w-32 md:w-full mx-auto"
+              />
+            </form>
           </div>
         </div>
-        <div className="text-sm md:text-base cursor-pointer hover:text-orange-600 duration-200 hidden md:block group">
-          TV Shows
-          <div className="group-hover:block hidden text-sm text-white bg-gradient-to-r from-blue-950 to-black fixed rounded-md">
-            <ul>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Popular TV Shows
-              </li>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Top Rated TV Shows
-              </li>
-              <li className="px-3 py-1 hover:bg-gradient-to-r from-blue-800 to-black rounded-sm">
-                Currently Airing
-              </li>
-            </ul>
+
+        <div className="text-white flex justify-between items-center pr-4">
+          <div className="relative group hidden md:block">
+            <VscAccount className="text-xl hover:text-orange-500 duration-200 cursor-pointer" />
+            <p className="hidden lg:group-hover:block text-black/55 absolute text-[10px] bg-slate-50 p-1 rounded-sm top-5 right-0 z-100">
+              Account
+            </p>
           </div>
-        </div>
-        <div>
-          <input
-            type="search"
-            name=""
-            id=""
-            placeholder="search"
-            className=" bg-white/80 rounded-xl text-xs focus:outline-none text-black p-2 max-h-5 placeholder-black/80 w-32 md:w-36"
+          <CiMenuBurger
+            className=" text-base sm:text-xl cursor-pointer"
+            onClick={toggleNav}
           />
         </div>
       </div>
-      <div className="text-white flex justify-end items-center pr-4">
-        <div className="relative group hidden md:block">
-          <VscAccount className="text-xl hover:text-orange-500 duration-200 cursor-pointer" />
-          <p className="hidden lg:group-hover:block text-black/55 absolute text-[10px] bg-slate-50 p-1 rounded-sm top-5 right-0 z-100">
-            Account
-          </p>
+      {nav ? (
+        <div
+          className="bg-black/80 fixed inset-0 w-full h-screen z-20 duration-200 transition-all backdrop-blur-sm"
+          onClick={toggleNav}
+        ></div>
+      ) : (
+        ""
+      )}
+      <div
+        className={
+          nav
+            ? "fixed w-[40%] sm:w-[30%] md:w-[25%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all"
+            : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-20 p-2 duration-500 transition-all"
+        }
+      >
+        <div className="w-full p-6 md:p-6 bg-gradient-to-r from-blue-800 to-black relative text-white border-b-4 border-red-500">
+          <AiOutlineClose
+            onClick={toggleNav}
+            className="text-lg sm:text-xl cursor-pointer duration-200 absolute top-4 md:top-4 md:right-6 right-4"
+          />
+          {/* <AiOutlineClose
+            onClick={toggleNav}
+            className="text-md sm:text-xl top-2 sm:top-4 right-4 sm:right-6 m-2 absolute cursor-pointer hover:text-red-600 duration-200"
+          /> */}
         </div>
-        <div className="md:hidden">
-          <CiMenuBurger className=" text-base sm:text-xl hover:text-orange-600 duration-200" />
-        </div>
+
+        <ul className="flex flex-col gap-4 pl-2 mt-6 sm:mt-6 font-semibold">
+          <li className="" onClick={() => toggleSubMenu("subMenu1")}>
+            <NavLink
+              to=""
+              className="flex items-center hover:bg-gray-300 duration-100"
+            >
+              <MdLocalMovies className="mr-2 text-sm ml-2 text-gray-600" />{" "}
+              Movies
+              <span className="font-thin ml-1 sm:ml-2">
+                {subMenu.subMenu1 ? <FiMinus /> : <FiPlus />}
+              </span>
+            </NavLink>
+          </li>
+          <li onClick={() => toggleSubMenu("subMenu2")}>
+            <NavLink
+              to=""
+              className="flex items-center hover:bg-gray-300 duration-100"
+            >
+              <MdLiveTv className="mr-2 text-sm ml-2 text-gray-600" />
+              Tv Shows
+              <span className="font-thin ml-1 sm:ml-2">
+                {subMenu.subMenu2 ? <FiMinus /> : <FiPlus />}
+              </span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to=""
+              className="flex items-center
+              hover:bg-gray-300
+              duration-100"
+            >
+              <FaBookmark className="mr-2 text-sm ml-2 text-gray-600" />
+              Watchlist
+            </NavLink>
+          </li>
+          <li className="hover:bg-gray-300 duration-100">
+            <NavLink to="" className="flex items-center ">
+              <MdAccountCircle className="mr-2 text-lg ml-2 text-gray-600" />
+              Account
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </div>
   );
