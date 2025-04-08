@@ -41,8 +41,8 @@ const Navbar = () => {
   }, [nav]);
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
-        <div className="font-bold text-sm md:text-lg md:col-span-1 leading-loose cursor-pointer">
+      <div className=" bg-black backdrop-blur-md p-3 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
+        <div className="font-bold text-base tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer">
           <Link to="/">
             <span className="text-red-700">MOVIE </span>
             <span className="text-blue-700">BOX</span>
@@ -86,7 +86,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed w-[40%] sm:w-[30%] md:w-[25%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all"
+            ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all"
             : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-20 p-2 duration-500 transition-all"
         }
       >
@@ -105,7 +105,7 @@ const Navbar = () => {
           <li className="" onClick={() => toggleSubMenu("subMenu1")}>
             <NavLink
               to=""
-              className="flex items-center hover:bg-gray-300 duration-100"
+              className="flex items-center hover:bg-gray-300 duration-100 p-1"
             >
               <MdLocalMovies className="mr-2 text-sm ml-2 text-gray-600" />{" "}
               Movies
@@ -113,11 +113,37 @@ const Navbar = () => {
                 {subMenu.subMenu1 ? <FiMinus /> : <FiPlus />}
               </span>
             </NavLink>
+            <ul
+              className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
+                subMenu.subMenu1 ? "max-h-32" : "max-h-0"
+              }`}
+            >
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Trending
+                </li>
+              </Link>
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Upcoming
+                </li>
+              </Link>
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Popular
+                </li>
+              </Link>
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Top Rated
+                </li>
+              </Link>
+            </ul>
           </li>
           <li onClick={() => toggleSubMenu("subMenu2")}>
             <NavLink
               to=""
-              className="flex items-center hover:bg-gray-300 duration-100"
+              className="flex items-center hover:bg-gray-300 duration-100 p-1"
             >
               <MdLiveTv className="mr-2 text-sm ml-2 text-gray-600" />
               Tv Shows
@@ -125,25 +151,50 @@ const Navbar = () => {
                 {subMenu.subMenu2 ? <FiMinus /> : <FiPlus />}
               </span>
             </NavLink>
+            <ul
+              className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
+                subMenu.subMenu2 ? "max-h-24" : "max-h-0"
+              }`}
+            >
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Currently Airing
+                </li>
+              </Link>
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Popular
+                </li>
+              </Link>
+              <Link>
+                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  Top Rated
+                </li>
+              </Link>
+            </ul>
           </li>
           <li>
             <NavLink
               to=""
               className="flex items-center
               hover:bg-gray-300
-              duration-100"
+              duration-100 p-1"
             >
               <FaBookmark className="mr-2 text-sm ml-2 text-gray-600" />
               Watchlist
             </NavLink>
           </li>
-          <li className="hover:bg-gray-300 duration-100">
-            <NavLink to="" className="flex items-center ">
+          <li className="">
+            <NavLink
+              to=""
+              className="flex items-center hover:bg-gray-300 duration-100 p-1"
+            >
               <MdAccountCircle className="mr-2 text-lg ml-2 text-gray-600" />
               Account
             </NavLink>
           </li>
         </ul>
+        <div className="absolute bottom-0 bg-black/90 h-[30%] w-full"></div>
       </div>
     </div>
   );
