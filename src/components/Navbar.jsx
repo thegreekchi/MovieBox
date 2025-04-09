@@ -95,106 +95,114 @@ const Navbar = () => {
             onClick={toggleNav}
             className="text-lg sm:text-xl cursor-pointer duration-200 absolute top-4 md:top-4 md:right-6 right-4"
           />
-          {/* <AiOutlineClose
-            onClick={toggleNav}
-            className="text-md sm:text-xl top-2 sm:top-4 right-4 sm:right-6 m-2 absolute cursor-pointer hover:text-red-600 duration-200"
-          /> */}
         </div>
-
-        <ul className="flex flex-col gap-4 pl-2 mt-6 sm:mt-6 font-semibold">
-          <li className="" onClick={() => toggleSubMenu("subMenu1")}>
-            <NavLink
-              to=""
-              className="flex items-center hover:bg-gray-300 duration-100 p-1"
-            >
-              <MdLocalMovies className="mr-2 text-sm ml-2 text-gray-600" />{" "}
-              Movies
-              <span className="font-thin ml-1 sm:ml-2">
-                {subMenu.subMenu1 ? <FiMinus /> : <FiPlus />}
-              </span>
-            </NavLink>
-            <ul
-              className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
-                subMenu.subMenu1 ? "max-h-32" : "max-h-0"
-              }`}
-            >
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Trending
-                </li>
-              </Link>
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Upcoming
-                </li>
-              </Link>
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Popular
-                </li>
-              </Link>
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Top Rated
-                </li>
-              </Link>
-            </ul>
-          </li>
-          <li onClick={() => toggleSubMenu("subMenu2")}>
-            <NavLink
-              to=""
-              className="flex items-center hover:bg-gray-300 duration-100 p-1"
-            >
-              <MdLiveTv className="mr-2 text-sm ml-2 text-gray-600" />
-              Tv Shows
-              <span className="font-thin ml-1 sm:ml-2">
-                {subMenu.subMenu2 ? <FiMinus /> : <FiPlus />}
-              </span>
-            </NavLink>
-            <ul
-              className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
-                subMenu.subMenu2 ? "max-h-24" : "max-h-0"
-              }`}
-            >
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Currently Airing
-                </li>
-              </Link>
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Popular
-                </li>
-              </Link>
-              <Link>
-                <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
-                  Top Rated
-                </li>
-              </Link>
-            </ul>
-          </li>
-          <li>
-            <NavLink
-              to=""
-              className="flex items-center
+        <div className="w-[60%] mx-4 bg-black/40 rounded-sm mt-6 sm:mt-6">
+          <form action="">
+            <input
+              type="search"
+              name=""
+              id=""
+              aria-label="search movie"
+              placeholder="search..."
+              className="w-full bg-transparent text-white italic placeholder-white px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
+            />
+          </form>
+        </div>
+        <div className="">
+          <ul className="flex flex-col gap-4 pl-2 mt-4 font-semibold overflow-y-auto">
+            <li className="" onClick={() => toggleSubMenu("subMenu1")}>
+              <NavLink
+                to=""
+                className="flex items-center hover:bg-gray-300 duration-100 p-1"
+              >
+                <MdLocalMovies className="mr-2 text-sm ml-2 text-gray-600" />{" "}
+                Movies
+                <span className="font-thin ml-1 sm:ml-2">
+                  {subMenu.subMenu1 ? <FiMinus /> : <FiPlus />}
+                </span>
+              </NavLink>
+              <ul
+                className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
+                  subMenu.subMenu1 ? "max-h-32" : "max-h-0"
+                }`}
+              >
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Trending
+                  </li>
+                </Link>
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Upcoming
+                  </li>
+                </Link>
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Popular
+                  </li>
+                </Link>
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Top Rated
+                  </li>
+                </Link>
+              </ul>
+            </li>
+            <li onClick={() => toggleSubMenu("subMenu2")}>
+              <NavLink
+                to=""
+                className="flex items-center hover:bg-gray-300 duration-100 p-1"
+              >
+                <MdLiveTv className="mr-2 text-sm ml-2 text-gray-600" />
+                Tv Shows
+                <span className="font-thin ml-1 sm:ml-2">
+                  {subMenu.subMenu2 ? <FiMinus /> : <FiPlus />}
+                </span>
+              </NavLink>
+              <ul
+                className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
+                  subMenu.subMenu2 ? "max-h-24" : "max-h-0"
+                }`}
+              >
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Currently Airing
+                  </li>
+                </Link>
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Popular
+                  </li>
+                </Link>
+                <Link>
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                    Top Rated
+                  </li>
+                </Link>
+              </ul>
+            </li>
+            <li>
+              <NavLink
+                to=""
+                className="flex items-center
               hover:bg-gray-300
               duration-100 p-1"
-            >
-              <FaBookmark className="mr-2 text-sm ml-2 text-gray-600" />
-              Watchlist
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              to=""
-              className="flex items-center hover:bg-gray-300 duration-100 p-1"
-            >
-              <MdAccountCircle className="mr-2 text-lg ml-2 text-gray-600" />
-              Account
-            </NavLink>
-          </li>
-        </ul>
-        <div className="absolute bottom-0 bg-black/90 h-[30%] w-full"></div>
+              >
+                <FaBookmark className="mr-2 text-sm ml-2 text-gray-600" />
+                Watchlist
+              </NavLink>
+            </li>
+            <li className="">
+              <NavLink
+                to=""
+                className="flex items-center hover:bg-gray-300 duration-100 p-1"
+              >
+                <MdAccountCircle className="mr-2 text-lg ml-2 text-gray-600" />
+                Account
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
