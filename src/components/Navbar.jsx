@@ -127,22 +127,22 @@ const Navbar = () => {
                 }`}
               >
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Trending
                   </li>
                 </Link>
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Upcoming
                   </li>
                 </Link>
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Popular
                   </li>
                 </Link>
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Top Rated
                   </li>
                 </Link>
@@ -165,17 +165,17 @@ const Navbar = () => {
                 }`}
               >
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Currently Airing
                   </li>
                 </Link>
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Popular
                   </li>
                 </Link>
                 <Link>
-                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-2 font-normal">
+                  <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Top Rated
                   </li>
                 </Link>
