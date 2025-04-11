@@ -126,22 +126,22 @@ const Navbar = () => {
                   subMenu.subMenu1 ? "max-h-32" : "max-h-0"
                 }`}
               >
-                <Link>
+                <Link to="trendingMovies">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Trending
                   </li>
                 </Link>
-                <Link>
+                <Link to="upcomingMovies">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Upcoming
                   </li>
                 </Link>
-                <Link>
+                <Link to="popularMovies">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Popular
                   </li>
                 </Link>
-                <Link>
+                <Link to="topRatedMovies">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Top Rated
                   </li>
@@ -164,17 +164,17 @@ const Navbar = () => {
                   subMenu.subMenu2 ? "max-h-24" : "max-h-0"
                 }`}
               >
-                <Link>
+                <Link to="tvAiring">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Currently Airing
                   </li>
                 </Link>
-                <Link>
+                <Link to="tvPopular">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Popular
                   </li>
                 </Link>
-                <Link>
+                <Link to="tvTopRated">
                   <li className="hover:bg-gray-300 duration-100 p-1 hover:translate-x-3 font-normal">
                     Top Rated
                   </li>
