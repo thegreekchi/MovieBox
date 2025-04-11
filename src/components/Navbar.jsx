@@ -111,16 +111,13 @@ const Navbar = () => {
         <div className="">
           <ul className="flex flex-col gap-4 pl-2 mt-4 font-semibold overflow-y-auto">
             <li className="" onClick={() => toggleSubMenu("subMenu1")}>
-              <NavLink
-                to=""
-                className="flex items-center hover:bg-gray-300 duration-100 p-1"
-              >
+              <div className="flex items-center hover:bg-gray-300 duration-100 p-1 cursor-pointer">
                 <MdLocalMovies className="mr-2 text-sm ml-2 text-gray-600" />{" "}
                 Movies
                 <span className="font-thin ml-1 sm:ml-2">
                   {subMenu.subMenu1 ? <FiMinus /> : <FiPlus />}
                 </span>
-              </NavLink>
+              </div>
               <ul
                 className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
                   subMenu.subMenu1 ? "max-h-32" : "max-h-0"
@@ -149,16 +146,13 @@ const Navbar = () => {
               </ul>
             </li>
             <li onClick={() => toggleSubMenu("subMenu2")}>
-              <NavLink
-                to=""
-                className="flex items-center hover:bg-gray-300 duration-100 p-1"
-              >
+              <div className="flex items-center hover:bg-gray-300 duration-100 p-1 cursor-pointer">
                 <MdLiveTv className="mr-2 text-sm ml-2 text-gray-600" />
                 Tv Shows
                 <span className="font-thin ml-1 sm:ml-2">
                   {subMenu.subMenu2 ? <FiMinus /> : <FiPlus />}
                 </span>
-              </NavLink>
+              </div>
               <ul
                 className={`transition-all duration-200 ease-in-out overflow-hidden font-light ml-10 ${
                   subMenu.subMenu2 ? "max-h-24" : "max-h-0"
