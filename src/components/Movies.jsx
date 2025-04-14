@@ -5,13 +5,13 @@ import ConicRow from "./ConicRow";
 const Movies = ({ movie }) => {
   return (
     <div className="">
-      <div className="min-w-32 h-32 sm:min-w-40 sm:h-40 md:min-w-44 md:h-44 cursor-pointer relative shadow-lg shadow-black rounded-md">
+      <div className="min-w-32 h-36 sm:min-w-40 sm:h-44 md:min-w-40 md:h-48 cursor-pointer relative shadow-lg shadow-black rounded-md">
         <div className="absolute flex justify-center items-center bottom-[5%] right-[5%] ">
           <ConicRow percentage={`${Math.round(movie.vote_average * 10)}`} />
         </div>
         <div className="inset-0 absolute bg-black/20 opacity-0 hover:opacity-100  duration-300 rounded-md" />
         <img
-          className="w-full h-full object-cover object-center rounded-md"
+          className="w-full h-full object-fill object-center rounded-md"
           src={
             movie.poster_path
               ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
