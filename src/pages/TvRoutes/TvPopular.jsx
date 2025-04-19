@@ -1,5 +1,27 @@
+import { memo } from "react";
+import useFetch from "../../Hooks/UseFetch";
+import MenuPages from "../../components/MenuPages";
+
 const TvPopular = () => {
-  return <div>TvPolpular</div>;
+  const {
+    data: popular,
+    loading,
+    currentPage,
+    nextPage,
+    prevPage,
+  } = useFetch("tv/popular");
+  const Title = "Popular Tv Shows";
+  console.log("Popular tv :", popular);
+  return (
+    <MenuPages
+      data={popular}
+      loading={loading}
+      currentPage={currentPage}
+      nextPage={nextPage}
+      prevPage={prevPage}
+      Title={Title}
+    />
+  );
 };
 
-export default TvPopular;
+export default memo(TvPopular);

@@ -1,25 +1,27 @@
 import { memo } from "react";
 import useFetch from "../../Hooks/UseFetch";
-import MenuMovies from "../../components/MenuMovies";
+// import MenuMovies from "../../components/MenuMovies";
+import MenuPages from "../../components/MenuPages";
 
 const PopularMovies = () => {
-  const { data: popularMovies, loading } = useFetch("movie/popular");
+  const {
+    data: popularMovies,
+    loading,
+    currentPage,
+    nextPage,
+    prevPage,
+  } = useFetch("movie/popular");
+  const Title = "Popular Movies";
   console.log("Popular movie menu :", popularMovies);
   return (
-    <div className="p-8 md:w-[90%] w-[95%] mx-auto font-Montserrat">
-      <div className=" font-semibold sm:font-bold tracking-tight text-base sm:text-xl">
-        Popular Movies
-      </div>
-      <div className="pt-8">
-        <div>{loading && <div>Loading...</div>}</div>
-        <div className="space-y-8">
-          {popularMovies &&
-            popularMovies.map((popular) => (
-              <MenuMovies key={popular.id} movie={popular} />
-            ))}
-        </div>
-      </div>
-    </div>
+    <MenuPages
+      data={popularMovies}
+      loading={loading}
+      currentPage={currentPage}
+      nextPage={nextPage}
+      prevPage={prevPage}
+      Title={Title}
+    />
   );
 };
 export default memo(PopularMovies);

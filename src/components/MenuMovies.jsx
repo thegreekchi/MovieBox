@@ -17,7 +17,7 @@ const MenuMovies = ({ movie }) => {
         </div>
         <div className="p-4">
           <div className="font-semibold text-sm sm:text-base">
-            {movie.title}
+            {movie.title || movie.original_name}
           </div>
           <div className="text-xs sm:text-sm line-clamp-3 mt-2 sm:mt-3">
             {movie.overview}
