@@ -22,16 +22,16 @@ const Row = ({ title, url, link }) => {
       {loading && (
         <div className="bg-white pt-4">
           <div className="w-[90%] mx-auto p-5">
-            <div className="w-20 h-4 rounded-md bg-black/80 relative overflow-hidden mb-6">
-              <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black via-white/70 to-black" />
+            <div className="w-20 h-4 rounded-md bg-black/50 relative overflow-hidden mb-6">
+              <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/50 via-white/70 to-black/50" />
             </div>
             <div className="flex gap-3 sm:gap-5 md:gap-6 w-full overflow-x-scroll scrollbar-hide">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <div
                   key={n}
-                  className="min-w-32 h-32 sm:min-w-40 sm:h-40 rounded-md bg-black relative overflow-hidden"
+                  className="min-w-32 h-32 sm:min-w-40 sm:h-40 rounded-md bg-black/50 relative overflow-hidden"
                 >
-                  <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black via-white/70 to-black" />
+                  <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/50 via-white/60 to-black/50" />
                 </div>
               ))}
             </div>

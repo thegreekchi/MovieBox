@@ -20,6 +20,7 @@ const useFetch = (endpoint) => {
         console.log("Genres:", data.genres);
         setGenre(data.genres);
       });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
