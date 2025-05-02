@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const useFetch = (endpoint) => {
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const BASE_URL = "https://api.themoviedb.org/3/";
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [randomMovie, setRandomMovie] = useState(null);
   console.log("randomMovie:", randomMovie);
-  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-  const BASE_URL = "https://api.themoviedb.org/3/";
   const [currentPage, setCurrentPage] = useState(1);
   const [genre, setGenre] = useState([]);
   const [genreId, setGenreId] = useState("");

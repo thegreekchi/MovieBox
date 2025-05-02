@@ -6,7 +6,7 @@ import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Row = ({ title, url, link }) => {
+const Row = ({ title, url, link, type }) => {
   const { data: movies, loading, error } = useFetch(url);
   const scrollRef = useRef();
   const scrollLeft = () => {
@@ -56,7 +56,7 @@ const Row = ({ title, url, link }) => {
                 ref={scrollRef}
               >
                 {movies.map((movie) => (
-                  <Movies key={movie.id} movie={movie} />
+                  <Movies key={movie.id} movie={movie} type={type} />
                 ))}
               </div>
               <FaCircleChevronRight
