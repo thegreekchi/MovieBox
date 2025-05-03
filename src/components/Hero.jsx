@@ -23,9 +23,9 @@ const Hero = () => {
             <img
               className="w-full h-[300px] sm:h-[450px] object-cover object-center"
               src={
-                randomMovie.backdrop_path
-                  ? `https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}`
-                  : `https://image.tmdb.org/t/p/original/${randomMovie?.poster_path}`
+                randomMovie.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${randomMovie?.poster_path}`
+                  : `https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}`
               }
               alt={randomMovie.title}
             />

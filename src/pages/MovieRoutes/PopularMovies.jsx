@@ -21,6 +21,7 @@ const PopularMovies = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="movie"
     />
   );
 };

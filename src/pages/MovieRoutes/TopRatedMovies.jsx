@@ -20,6 +20,7 @@ const TopRatedMovies = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="movie"
     />
   );
 };

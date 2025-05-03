@@ -20,6 +20,7 @@ const TvTopRated = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="tv"
     />
   );
 };

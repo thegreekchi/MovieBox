@@ -24,6 +24,7 @@ const TrendingMovies = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="movie"
     />
     // <div className="p-8 md:w-[90%] w-[95%] mx-auto font-Montserrat">
     //   <div className="flex justify-between items-center">

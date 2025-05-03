@@ -9,6 +9,7 @@ const MenuPages = ({
   nextPage,
   currentPage,
   data,
+  type,
 }) => {
   return (
     <div className="p-8 md:w-[95%] w-[100%] mx-auto font-Montserrat">
@@ -37,7 +38,7 @@ const MenuPages = ({
         <div className="space-y-8">
           {data &&
             data.map((trending) => (
-              <MenuMovies key={trending.id} movie={trending} />
+              <MenuMovies key={trending.id} movie={trending} type={type} />
             ))}
         </div>
         <div className="flex w-[60%] mx-auto justify-between mt-16 mb-8">

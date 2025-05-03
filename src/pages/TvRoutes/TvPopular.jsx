@@ -20,6 +20,7 @@ const TvPopular = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="tv"
     />
   );
 };

@@ -19,6 +19,7 @@ const TvAiring = () => {
       nextPage={nextPage}
       prevPage={prevPage}
       Title={Title}
+      type="tv"
     />
   );
 };
