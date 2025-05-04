@@ -5,6 +5,7 @@ import Trailer from "../../components/Trailer";
 import Overview from "../../components/Overview";
 import DetailsHero from "../../components/DetailsHero";
 import Casts from "../../components/Casts";
+import Recommendations from "../../components/Recommendations";
 
 const MovieDetail = () => {
   const { type, id } = useParams();
@@ -18,6 +19,7 @@ const MovieDetail = () => {
           <Overview data={data} />
           <Trailer data={data} />
           <Casts data={data} />
+          <Recommendations data={data} />
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@ const Trailer = ({ data }) => {
   return (
     <>
       <div className="w-[97%] sm:w-[90%] mx-auto mt-4">
-        {data?.cast ? (
+        {data?.trailer ? (
           <div>
             <p className="font-bold sm:text-lg text-base ">Trailer</p>
             <iframe
