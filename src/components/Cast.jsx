@@ -6,10 +6,10 @@ const Cast = ({ cast }) => {
   return (
     <>
       <Link to="">
-        <div className="min-w-28 h-28 sm:h-32 sm:min-w-32  md:min-w-40 md:h-40 cursor-pointer relative shadow-md shadow-black rounded-full mt-2">
-          <div className="inset-0 absolute bg-black/30 opacity-50 hover:opacity-100  duration-300 rounded-full" />
+        <div className="min-w-24 h-32 sm:h-36 sm:min-w-28  md:min-w-32 md:h-44 cursor-pointer relative shadow-md shadow-black rounded-md mt-2">
+          <div className="inset-0 absolute bg-black/30 opacity-50 hover:opacity-100  duration-300 rounded-md" />
           <img
-            className="w-full h-full object-fill object-center rounded-full"
+            className="w-full h-full object-fill object-center rounded-md"
             src={
               cast.profile_path
                 ? `https://image.tmdb.org/t/p/w185${cast.profile_path}`
