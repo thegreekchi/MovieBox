@@ -62,7 +62,7 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="search"
-                className=" bg-white/80 rounded-xl text-xs focus:outline-none text-black p-2 max-h-5 placeholder-black/80 w-32 md:w-full mx-auto"
+                className=" bg-white/80 rounded-md text-xs focus:outline-none text-black sm:p-3 p-2 max-h-5 placeholder-black/80 w-40 sm:w-52 md:w-64 mx-auto"
               />
             </form>
           </div>
