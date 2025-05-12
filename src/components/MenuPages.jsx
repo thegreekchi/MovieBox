@@ -34,7 +34,16 @@ const MenuPages = ({
         </div>
       </div>
       <div className="pt-8">
-        <div>{loading && <div>Loading...</div>}</div>
+        <div className="space-y-8">
+          {loading &&
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
+              <div key={num}>
+                <div className="rounded-md shadow-md shadow-black/20 h-32 sm:h-44 bg-black/70 relative overflow-hidden">
+                  <div className="absolute shimmer inset-0 opacity-30 shadow-white bg-gradient-to-r from-black/70 via-white/70 to-black/70" />
+                </div>
+              </div>
+            ))}
+        </div>
         <div className="space-y-8">
           {data &&
             data.map((trending) => (

@@ -14,7 +14,7 @@ const Casts = ({ data }) => {
   };
   return (
     <div className="w-[97%] sm:w-[90%] mx-auto md:mt-6 mt-4">
-      {data?.cast && (
+      {data?.cast.length > 0 && (
         <div>
           <p className="font-bold sm:text-lg text-base ">Top Cast</p>
           <div className="flex relative group duration-200">
