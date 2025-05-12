@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <div className="font-Montserrat">
       <div className=" bg-black backdrop-blur-md p-3 py-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
-        <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer border-1">
+        <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
             <div className="flex items-center">
               <span className="">
