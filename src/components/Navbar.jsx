@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import { FiMinus, FiPlus } from "react-icons/fi";
@@ -42,10 +43,15 @@ const Navbar = () => {
   return (
     <div className="font-Montserrat">
       <div className=" bg-black backdrop-blur-md p-3 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
-        <div className="font-bold text-base tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer">
+        <div className="font-bold text-base tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
-            <span className="text-red-700">MOVIE </span>
-            <span className="text-blue-700">BOX</span>
+            <div className="flex">
+              <span className="">
+                <BsCameraReelsFill className="text-red-700" size={21} />
+              </span>
+              <span className="text-red-700">film</span>
+              <span className="text-blue-700">BOX</span>
+            </div>
           </Link>
         </div>
         <div className="flex justify-around items-center text-white md:col-span-3">
