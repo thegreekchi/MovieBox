@@ -47,7 +47,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center">
               <span className="">
-                <BsCameraReelsFill className="text-red-700" size={21} />
+                <BsCameraReelsFill className="text-red-700 text-lg sm:text-xl" />
               </span>
               <span className="text-red-700 pt-1">film</span>
               <span className="text-blue-700 pt-1">BOX</span>
