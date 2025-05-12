@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MenuMovies = ({ movie, type }) => {
   return (
     <>
-      <Link to={`/${type}/${movie.id}`}>
+      <Link to={`/media/${type}/${movie.id}`}>
         <div className="rounded-sm shadow-md shadow-black/20 flex hover:shadow-lg hover:shadow-black/40 duration-300 cursor-pointer mb-8">
           <div>
             <img

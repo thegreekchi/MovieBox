@@ -106,12 +106,12 @@ const DetailsHero = ({ data }) => {
           </div>
           <div className="">
             <div className="font-semibold text-xs space-y-2 sm:space-y-4 flex flex-col justify-end h-full">
-              <p>
+              <div>
                 Release Date:{" "}
                 <div className="font-normal">
                   {data?.details?.first_air_date || data?.details?.release_date}
                 </div>
-              </p>
+              </div>
               <p>
                 Country:{" "}
                 {data?.details?.production_countries.map((country, i) => (

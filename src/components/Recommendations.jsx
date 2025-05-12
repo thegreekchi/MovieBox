@@ -4,6 +4,7 @@ import Recomended from "./Recomended";
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 const Recommendations = ({ data }) => {
+  console.log("recommendations :", data?.recommendaqtions);
   const scrollRef = useRef();
   const scrollLeft = () => {
     scrollRef.current.scrollBy(-240, 0);
@@ -13,7 +14,7 @@ const Recommendations = ({ data }) => {
   };
   return (
     <div className="w-[97%] sm:w-[90%] mx-auto md:mt-6 mt-4">
-      {data?.recommendaqtions && (
+      {data?.recommendaqtions.length > 0 && (
         <div>
           <p className="font-bold sm:text-lg text-base ">Recommended</p>
           <div className="flex relative group duration-200">

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Movies = ({ movie, type }) => {
   return (
     <div className="">
-      <Link to={`/${type}/${movie.id}`}>
+      <Link to={`/media/${type}/${movie.id}`}>
         <div className="min-w-36 h-48 sm:h-56 sm:min-w-44  md:min-w-48 md:h-64 cursor-pointer relative shadow-md shadow-black rounded-md">
           <div className="absolute flex justify-center items-center bottom-[5%] right-[5%] ">
             <ConicRow percentage={`${Math.round(movie.vote_average * 10)}`} />

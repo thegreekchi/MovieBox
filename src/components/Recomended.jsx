@@ -5,8 +5,8 @@ import ConicRow from "./ConicRow";
 const Recomended = ({ recommendations, type, id }) => {
   return (
     <>
-      <Link to={`/${type}/${id}`}>
-        <div className="min-w-36 h-44 sm:h-52 sm:min-w-44  md:min-w-52 md:h-60 cursor-pointer relative shadow-md shadow-black rounded-md mt-2">
+      <Link to={`/media/${type}/${id}`}>
+        <div className="min-w-36 h-48 sm:h-56 sm:min-w-44  md:min-w-48 md:h-64 cursor-pointer relative shadow-md shadow-black rounded-md mt-2">
           <div className="absolute flex justify-center items-center bottom-[5%] right-[5%] ">
             <ConicRow
               percentage={`${Math.round(recommendations.vote_average * 10)}`}

@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 /* eslint-disable react/prop-types */
 const Casts = ({ data }) => {
+  console.log("Cast:", data?.cast);
   const scrollRef = useRef();
   const scrollLeft = () => {
     scrollRef.current.scrollBy(-240, 0);
