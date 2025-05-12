@@ -6,7 +6,7 @@ const Trailer = ({ data }) => {
       <div className="w-[97%] sm:w-[90%] mx-auto mt-4">
         {data?.trailer ? (
           <div>
-            <p className="font-bold sm:text-lg text-base ">Trailer</p>
+            <p className="font-bold sm:text-lg text-base">Trailer</p>
             <iframe
               className="pt-3 w-[100%] md:w-[70%] sm:w-[80%] h-[260px] sm:h-[360px] md:h-[430px] mx-auto"
               src={`https://www.youtube.com/embed/${data.trailer.key}`}
@@ -15,7 +15,7 @@ const Trailer = ({ data }) => {
             ></iframe>
           </div>
         ) : (
-          <div className="pt-3 w-[100%] md:w-[70%] sm:w-[80%] h-[260px] sm:h-[360px] md:h-[430px] mx-auto text-gray-600 bg-black text-center sm:text-lg text-base">
+          <div className="pt-3 w-[100%] md:w-[70%] sm:w-[80%] h-[260px] sm:h-[360px] md:h-[430px] mx-auto text-gray-600 bg-black sm:text-lg text-base flex justify-center items-cente sm:font-semibold">
             <p>No trailer available</p>
           </div>
         )}
