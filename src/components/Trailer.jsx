@@ -15,7 +15,7 @@ const Trailer = ({ data }) => {
             ></iframe>
           </div>
         ) : (
-          <div className="pt-3 w-[100%] md:w-[70%] sm:w-[80%] h-[260px] sm:h-[360px] md:h-[430px] mx-auto text-gray-600 bg-black sm:text-lg text-base flex justify-center items-cente sm:font-semibold">
+          <div className="pt-3 w-[100%] md:w-[70%] sm:w-[80%] h-[260px] sm:h-[360px] md:h-[430px] mx-auto text-gray-600 bg-black sm:text-lg text-base flex justify-center items-center sm:font-semibold">
             <p>No trailer available</p>
           </div>
         )}
