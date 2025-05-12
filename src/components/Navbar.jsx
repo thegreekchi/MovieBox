@@ -42,15 +42,15 @@ const Navbar = () => {
   }, [nav]);
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-3 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
-        <div className="font-bold text-base tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer border-1">
+      <div className=" bg-black backdrop-blur-md p-3 py-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
+        <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 md:text-lg md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
-            <div className="flex">
+            <div className="flex items-center">
               <span className="">
                 <BsCameraReelsFill className="text-red-700" size={21} />
               </span>
-              <span className="text-red-700">film</span>
-              <span className="text-blue-700">BOX</span>
+              <span className="text-red-700 pt-1">film</span>
+              <span className="text-blue-700 pt-1">BOX</span>
             </div>
           </Link>
         </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="search"
-                className=" bg-white/80 rounded-md text-xs focus:outline-none text-black sm:p-3 p-2 max-h-5 placeholder-black/80 w-40 sm:w-52 md:w-64 mx-auto"
+                className=" bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
               />
             </form>
           </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
             </p>
           </div>
           <CiMenuBurger
-            className=" text-base sm:text-xl cursor-pointer"
+            className=" text-lg sm:text-xl cursor-pointer"
             onClick={toggleNav}
           />
         </div>
