@@ -109,7 +109,7 @@ const Navbar = () => {
             className="text-lg sm:text-xl cursor-pointer duration-200 absolute top-4 md:top-4 md:right-6 right-4"
           />
         </div>
-        <div className="w-[60%] mx-4 bg-black/40 rounded-sm mt-6 sm:mt-6">
+        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-6 sm:mt-6">
           <form action="">
             <input
               type="search"
@@ -200,8 +200,8 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="">
-              <button className="flex items-center bg-gray-800 hover:scale-95 duration-100 p-1 pr-3 text-white rounded-md tracking-tight">
-                <FcGoogle className="mr-2 text-lg ml-2 " />
+              <button className="flex items-center justify-center bg-gray-700 hover:scale-[96%] duration-100 p-1 w-[78%] sm:w-[80%]  text-white rounded-md text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-md focus:ring-offset-1 mb-1">
+                <FcGoogle className="mr-2 text-lg " />
                 Sign in with Google
               </button>
             </li>
