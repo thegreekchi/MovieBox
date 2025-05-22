@@ -3,10 +3,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { MdAccountCircle, MdLiveTv, MdLocalMovies } from "react-icons/md";
+import { MdLiveTv, MdLocalMovies } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -40,6 +41,12 @@ const Navbar = () => {
       document.body.style.overflow = "scroll";
     };
   }, [nav]);
+
+  const location = useLocation();
+  useEffect(() => {
+    setNav(false);
+  }, [location.pathname]);
+
   return (
     <div className="font-Montserrat">
       <div className=" bg-black backdrop-blur-md p-3 py-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
@@ -193,13 +200,10 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="">
-              <NavLink
-                to=""
-                className="flex items-center hover:bg-gray-300 duration-100 p-1"
-              >
-                <MdAccountCircle className="mr-2 text-lg ml-2 text-gray-600" />
-                Account
-              </NavLink>
+              <button className="flex items-center bg-gray-800 hover:scale-95 duration-100 p-1 pr-3 text-white rounded-md tracking-tight">
+                <FcGoogle className="mr-2 text-lg ml-2 " />
+                Sign in with Google
+              </button>
             </li>
           </ul>
         </div>
