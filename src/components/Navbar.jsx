@@ -200,7 +200,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="">
-              <button className="flex items-center justify-center bg-gray-700 hover:scale-[96%] duration-100 p-1 w-[78%] sm:w-[80%]  text-white rounded-md text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-md focus:ring-offset-1 mb-1">
+              <button className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[80%] text-white rounded-md text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-md focus:ring-offset-1 mb-1 mt-2">
                 <FcGoogle className="mr-2 text-lg " />
                 Sign in with Google
               </button>
