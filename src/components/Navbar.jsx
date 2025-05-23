@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
@@ -8,6 +9,9 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import { MdLiveTv, MdLocalMovies } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { auth } from "../firebaseConfig";
+import { AuthContext } from "../Context";
+import { PiSignOutBold } from "react-icons/pi";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -16,6 +20,22 @@ const Navbar = () => {
     subMenu2: false,
   });
   console.log(subMenu);
+
+  const provider = new GoogleAuthProvider();
+
+  const { isAuth } = useContext(AuthContext);
+  console.log("isAuth", isAuth);
+
+  const signIn = async () => {
+    try {
+      const user = await signInWithPopup(auth, provider);
+      console.log("second", user.user.displayName.split(" ")[0]);
+    } catch (error) {
+      console.log(error.message, error);
+    }
+  };
+
+  const logOut = () => signOut(auth);
 
   const toggleNav = () => {
     setNav(!nav);
@@ -99,17 +119,25 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all"
+            ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all overflow-y-scroll"
             : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-20 p-2 duration-500 transition-all"
         }
       >
-        <div className="w-full p-6 md:p-6 bg-gradient-to-r from-blue-800 to-black relative text-white border-b-4 border-red-500">
+        <div className="w-full p-6 pl-4 bg-gradient-to-r from-blue-800 to-black relative text-white border-b-4 border-red-500">
+          {isAuth && (
+            <div className=" italic font-semibold text-white/80 tracking-tighter text-sm w-[60%]">
+              Hello, {isAuth?.displayName.split(" ")[0]}{" "}
+            </div>
+          )}
           <AiOutlineClose
             onClick={toggleNav}
-            className="text-lg sm:text-xl cursor-pointer duration-200 absolute top-4 md:top-4 md:right-6 right-4"
+            className={`text-lg sm:text-xl cursor-pointer duration-200 absolute ${
+              !isAuth ? "top-4" : "top-6"
+            }  right-4`}
           />
         </div>
-        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-6 sm:mt-6">
+
+        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-5">
           <form action="">
             <input
               type="search"
@@ -117,7 +145,7 @@ const Navbar = () => {
               id=""
               aria-label="search movie"
               placeholder="search..."
-              className="w-full bg-transparent text-white italic placeholder-white px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
+              className="w-full bg-transparent text-white italic placeholder-white px-2 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
             />
           </form>
         </div>
@@ -199,11 +227,24 @@ const Navbar = () => {
                 Watchlist
               </NavLink>
             </li>
-            <li className="">
-              <button className="flex items-center justify-center bg-gray-800 hover:bg-gray-700 hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[80%] text-white rounded-md text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-md focus:ring-offset-1 mb-1 mt-2">
-                <FcGoogle className="mr-2 text-lg " />
-                Sign in with Google
-              </button>
+            <li className="mb-4">
+              {!isAuth ? (
+                <button
+                  onClick={signIn}
+                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%] text-white/70 hover:text-white rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-sm focus:ring-offset-1 mb-1 mt-2"
+                >
+                  <FcGoogle className="mr-2 text-lg " />
+                  Sign in with Google
+                </button>
+              ) : (
+                <button
+                  onClick={logOut}
+                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%] text-white/70 hover:text-white rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-sm focus:ring-offset-1 mb-1 mt-2"
+                >
+                  <PiSignOutBold className="mr-2 text-lg" />
+                  Sign Out
+                </button>
+              )}
             </li>
           </ul>
         </div>
