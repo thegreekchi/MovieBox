@@ -20,6 +20,9 @@ function App() {
         position="top-center"
         toastOptions={{
           duration: 3000,
+          style: {
+            fontFamily: "Montserrat, sans-serif",
+          },
           // style: {
           //   background: "#616569",
           //   color: "#fff",
