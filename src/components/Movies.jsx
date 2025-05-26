@@ -7,7 +7,7 @@ import { FaBookmark } from "react-icons/fa";
 const Movies = ({ movie, type }) => {
   return (
     <div className="relative">
-      <div className="absolute text-white flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-5 pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer">
+      <div className="absolute text-white flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-4 md:pt-5 pb-1 md:pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer">
         <FaBookmark className="" />
       </div>
       <Link to={`/media/${type}/${movie.id}`}>
