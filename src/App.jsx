@@ -11,10 +11,25 @@ import TvTopRated from "./pages/TvRoutes/TvTopRated";
 import MovieDetail from "./pages/MediaDetail/MovieDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          // style: {
+          //   background: "#616569",
+          //   color: "#fff",
+          // },
+          // success: {
+          //   style: { background: "#2E6F40" },
+          // },
+          // error: { style: { background: "red" } },
+        }}
+      />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -12,6 +12,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { auth } from "../firebaseConfig";
 import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -29,13 +30,16 @@ const Navbar = () => {
   const signIn = async () => {
     try {
       const user = await signInWithPopup(auth, provider);
+      toast.success("You're signed in");
       console.log("second", user.user.displayName.split(" ")[0]);
     } catch (error) {
+      toast.error("Login failed");
       console.log(error.message, error);
     }
   };
 
-  const logOut = () => signOut(auth);
+  const logOut = () =>
+    signOut(auth).then(() => toast.success("You're signed out"));
 
   const toggleNav = () => {
     setNav(!nav);
