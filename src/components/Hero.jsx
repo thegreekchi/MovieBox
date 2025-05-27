@@ -19,7 +19,7 @@ const Hero = () => {
       )}
       {randomMovie && (
         <>
-          <div className="relative">
+          <div className="relative sm:mt-12 md:mt-16 mt-10">
             <img
               className="w-full h-[300px] sm:h-[450px] object-cover object-center"
               src={
