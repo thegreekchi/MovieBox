@@ -12,7 +12,7 @@ const MenuPages = ({
   type,
 }) => {
   return (
-    <div className="p-8 md:w-[95%] w-[100%] mx-auto font-Montserrat">
+    <div className="p-8 md:w-[95%] w-[100%] mx-auto font-Montserrat sm:mt-12 md:mt-16 mt-10">
       <div className="flex justify-between items-center">
         <div className=" font-semibold sm:font-bold tracking-tight text-base sm:text-xl">
           {Title}

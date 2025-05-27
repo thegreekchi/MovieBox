@@ -13,7 +13,7 @@ const MovieDetail = () => {
   return (
     <div className="font-Montserrat">
       {data && (
-        <div className="p-6">
+        <div className="p-6 sm:mt-12 md:mt-16 mt-10">
           <DetailsHero data={data} />
           <Overview data={data} />
           <Trailer data={data} />
