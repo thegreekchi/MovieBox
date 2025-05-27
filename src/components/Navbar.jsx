@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { BsCameraReelsFill } from "react-icons/bs";
+// import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -73,15 +73,20 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-3 py-2 sm:p-4 flex justify-between items-center md:grid md:grid-cols-5 relative z-10 border-b-2 border-orange-500">
+      <div className=" bg-black backdrop-blur-md p-2 py-2 sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
             <div className="flex items-center">
-              <span className="">
+              {/* <span className="">
                 <BsCameraReelsFill className="text-red-700 text-lg sm:text-xl" />
               </span>
               <span className="text-red-700 pt-1">film</span>
-              <span className="text-blue-700 pt-1">BOX</span>
+              <span className="text-blue-700 pt-1">BOX</span> */}
+              <img
+                src="Filmbox2.png"
+                alt=""
+                className="border-1 border-white md:h-[50px] h-[30px] sm:h-[40px] object-contain"
+              />
             </div>
           </Link>
         </div>
@@ -93,7 +98,7 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="search"
-                className=" bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
+                className="hidden md:block bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
               />
             </form>
           </div>
@@ -107,14 +112,14 @@ const Navbar = () => {
             </p>
           </div>
           <CiMenuBurger
-            className=" text-lg sm:text-xl cursor-pointer"
+            className=" text-xl sm:text-2xl cursor-pointer"
             onClick={toggleNav}
           />
         </div>
       </div>
       {nav ? (
         <div
-          className="bg-black/80 fixed inset-0 w-full h-screen z-20 duration-200 transition-all backdrop-blur-sm"
+          className="bg-black/80 fixed inset-0 w-full h-screen  duration-1000 transition-all backdrop-blur-sm z-40"
           onClick={toggleNav}
         ></div>
       ) : (
@@ -123,11 +128,17 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white z-20 duration-200 transition-all overflow-y-scroll"
+            ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white  duration-500 transition-all overflow-y-scroll z-50"
             : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-20 p-2 duration-500 transition-all"
         }
       >
-        <div className="w-full p-6 pl-4 bg-gradient-to-r from-blue-800 to-black relative text-white border-b-4 border-red-500">
+        <div className="w-full p-4 pl-6 bg-gradient-to-r from-blue-900 to-black relative text-white border-b-4 border-red-500 flex justify-between items-center">
+          <img
+            src="Filmbox4.png"
+            alt=""
+            className="border-1 border-white
+          md:h-[35px] h-[25px] sm:h-[30px] object-contain"
+          />
           {isAuth && (
             <div className=" italic font-semibold text-white/80 tracking-tighter text-sm w-[60%]">
               Hello, {isAuth?.displayName.split(" ")[0]}{" "}
@@ -135,9 +146,7 @@ const Navbar = () => {
           )}
           <AiOutlineClose
             onClick={toggleNav}
-            className={`text-lg sm:text-xl cursor-pointer duration-200 absolute ${
-              !isAuth ? "top-4" : "top-6"
-            }  right-4`}
+            className="text-xl sm:text-2xl cursor-pointer duration-200"
           />
         </div>
 
