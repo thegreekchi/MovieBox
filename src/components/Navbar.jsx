@@ -85,7 +85,7 @@ const Navbar = () => {
               <img
                 src="Filmbox2.png"
                 alt=""
-                className="border-1 border-white md:h-[50px] h-[30px] sm:h-[40px] object-contain"
+                className="border-1 border-white md:h-[50px] h-[40px] sm:h-[45px] object-contain"
               />
             </div>
           </Link>
