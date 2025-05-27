@@ -13,6 +13,7 @@ import { auth } from "../firebaseConfig";
 import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -129,7 +130,7 @@ const Navbar = () => {
         className={
           nav
             ? "fixed w-[70%] sm:w-[40%] md:w-[30%] h-screen top-0 right-0 bg-white  duration-500 transition-all overflow-y-scroll z-50"
-            : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-20 p-2 duration-500 transition-all"
+            : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-50  duration-500 transition-all"
         }
       >
         <div className="w-full p-4 pl-6 bg-gradient-to-r from-blue-900 to-black relative text-white border-b-4 border-red-500 flex justify-between items-center">
@@ -139,26 +140,36 @@ const Navbar = () => {
             className="border-1 border-white
           md:h-[35px] h-[25px] sm:h-[30px] object-contain"
           />
-          {isAuth && (
-            <div className=" italic font-semibold text-white/80 tracking-tighter text-sm w-[60%]">
-              Hello, {isAuth?.displayName.split(" ")[0]}{" "}
-            </div>
-          )}
+
           <AiOutlineClose
             onClick={toggleNav}
             className="text-xl sm:text-2xl cursor-pointer duration-200"
           />
         </div>
-
-        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-5">
-          <form action="">
+        {isAuth ? (
+          <motion.div
+            className=" font-semibold text-black tracking-tighter text-sm w-[60%] p-2 mt-2 md:mt-4 pl-6"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            Hello, {isAuth?.displayName.split(" ")[0]}{" "}
+          </motion.div>
+        ) : (
+          <div className="md:h-12 h-8"></div>
+        )}
+        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-4">
+          <form action="" className="">
             <input
               type="search"
               name=""
               id=""
               aria-label="search movie"
               placeholder="search..."
-              className="w-full bg-transparent text-white italic placeholder-white px-2 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
+              className="w-full bg-transparent text-white italic placeholder-white p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
             />
           </form>
         </div>
