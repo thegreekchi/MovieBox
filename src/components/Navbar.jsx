@@ -3,18 +3,16 @@ import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 // import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
-import { FaBookmark, FaRobot } from "react-icons/fa";
+import { FaBookmark } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { MdLiveTv, MdLocalMovies } from "react-icons/md";
-import { VscAccount } from "react-icons/vsc";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { auth } from "../firebaseConfig";
 import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import { HiChatAlt2 } from "react-icons/hi";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -107,25 +105,13 @@ const Navbar = () => {
         </div>
 
         <div className="text-white flex justify-between items-center pr-4">
-          <div className="relative group hover:text-orange-500 pr-12">
-            <VscAccount className=" hidden text-xl hover:text-orange-500 duration-200 cursor-pointer" />
-            <HiChatAlt2
-              title="AI Chat"
-              className="hidden text-3xl hover:text-orange-500 duration-200 cursor-pointer"
-            />
+          <div className="relative pr-12">
             <img
               src="Chatgpt2.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[25px] sm:h-[30px]"
+              className="w-auto h-[25px] sm:h-[30px] cursor-pointer"
             />
-            <FaRobot
-              title="AI Chat"
-              className="text-2xl hidden hover:text-orange-500 duration-200 cursor-pointer"
-            />
-            {/* <p className="hidden lg:group-hover:block text-black/55 absolute text-[10px] bg-slate-50 p-1 rounded-sm top-7 right-0 z-100 w-12">
-              AI chat
-            </p> */}
           </div>
           <CiMenuBurger
             className=" text-xl sm:text-2xl cursor-pointer"

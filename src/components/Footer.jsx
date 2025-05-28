@@ -13,9 +13,9 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="text-center flex flex-col justify-center items-center">
+        <div className="text-center flex flex-col justify-center items-center mt-3">
           <div className="text-sm ">Built with</div>
-          <div className="flex p-2">
+          <div className="flex p-4">
             {/* <img src="tmdb.png" alt="TMDB.logo" className="w-12 h-12 p-1" /> */}
             {/* <img
               src="footer1.png"
