@@ -32,11 +32,11 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10" />
           </div>
           <div>
-            <div className="absolute font-Montserrat text-white top-[16%] md:top-[16%] px-5 py-3 sm:p-10">
+            <div className="absolute font-Montserrat text-white top-[16%] md:top-[16%] px-[35px] sm:px-[45px] py-3 sm:p-10">
               <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%] pb-1">
                 {randomMovie.title}
               </h1>
-              <h3 className="font-semi-bold text-sm sm:text-base md:xl line-clamp-3 sm:line-clamp-3 md:line-clamp-none max-w-[60%] pt-1 sm:pt-2">
+              <h3 className="font-semi-bold text-sm sm:text-base md:xl line-clamp-4 sm:line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
                 {randomMovie.overview}
               </h3>
               <h3 className="font-semibold text-xs sm:text-base pt-2">
@@ -47,7 +47,7 @@ const Hero = () => {
                 <MdOutlineSmartDisplay className="inline-block ml-2 text-lg sm:text-xl md:text-2xl" />
               </button>
             </div>
-            <div className="absolute flex justify-center items-center bottom-20 right-10 sm:bottom-[15%] sm:right-[10%]">
+            <div className="absolute flex justify-center items-center bottom-20 right-10 sm:bottom-[30%] sm:right-[15%]">
               <Conic
                 percentage={`${Math.round(randomMovie.vote_average * 10)}`}
               />
