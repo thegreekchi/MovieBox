@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 // import { BsCameraReelsFill } from "react-icons/bs";
 import { CiMenuBurger } from "react-icons/ci";
-import { FaBookmark } from "react-icons/fa";
+import { FaBookmark, FaRobot } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { MdLiveTv, MdLocalMovies } from "react-icons/md";
@@ -14,6 +14,7 @@ import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import { HiChatAlt2 } from "react-icons/hi";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -74,7 +75,7 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-2 py-2 sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
+      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
             <div className="flex items-center">
@@ -106,11 +107,25 @@ const Navbar = () => {
         </div>
 
         <div className="text-white flex justify-between items-center pr-4">
-          <div className="relative group hidden md:block">
-            <VscAccount className="text-xl hover:text-orange-500 duration-200 cursor-pointer" />
-            <p className="hidden lg:group-hover:block text-black/55 absolute text-[10px] bg-slate-50 p-1 rounded-sm top-5 right-0 z-100">
-              Account
-            </p>
+          <div className="relative group hover:text-orange-500 pr-12">
+            <VscAccount className=" hidden text-xl hover:text-orange-500 duration-200 cursor-pointer" />
+            <HiChatAlt2
+              title="AI Chat"
+              className="hidden text-3xl hover:text-orange-500 duration-200 cursor-pointer"
+            />
+            <img
+              src="chatgpt1.png"
+              title="AI Chat"
+              alt=""
+              className="w-auto h-[30px]"
+            />
+            <FaRobot
+              title="AI Chat"
+              className="text-2xl hidden hover:text-orange-500 duration-200 cursor-pointer"
+            />
+            {/* <p className="hidden lg:group-hover:block text-black/55 absolute text-[10px] bg-slate-50 p-1 rounded-sm top-7 right-0 z-100 w-12">
+              AI chat
+            </p> */}
           </div>
           <CiMenuBurger
             className=" text-xl sm:text-2xl cursor-pointer"

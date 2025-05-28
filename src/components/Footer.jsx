@@ -1,22 +1,42 @@
-import { BsCameraReelsFill } from "react-icons/bs";
-
 const Footer = () => {
   return (
     <div className=" bg-black text-white font-Montserrat p-4 ">
-      <div className="flex justify-center items-center">
-        <div className="flex text-center font-bold text-lg">
-          <span className="">
-            <BsCameraReelsFill className="text-red-700" size={21} />
-          </span>
-          <span className="text-red-700">film</span>
-          <span className="text-blue-700">BOX</span>
+      {/* <div className=" bg-white text-black font-Montserrat p-4"> */}
+
+      <div className="flex-col w-[80%] mx-auto justify-center items-center">
+        <div className="flex justify-center items-center pt-4">
+          <div className="flex text-center font-bold text-lg">
+            <img
+              src="Filmbox2.png"
+              alt=""
+              className="border-1 border-white md:h-[50px] h-[40px] sm:h-[45px] object-contain"
+            />
+          </div>
+        </div>
+        <div className="text-center flex flex-col justify-center items-center">
+          <div className="text-sm ">Built with</div>
+          <div className="flex p-2">
+            {/* <img src="tmdb.png" alt="TMDB.logo" className="w-12 h-12 p-1" /> */}
+            {/* <img
+              src="footer1.png"
+              alt="footer.png"
+              className="w-60 p-1 rounded-lg"
+            /> */}
+            <img
+              src="firebase.png"
+              alt="footer.png"
+              className="w-28 h-28 object-cover rounded-full p-1"
+            />
+            <img
+              src="React.png"
+              alt="react.png"
+              className="w-28 h-28 object-cover rounded-full p-1"
+            />
+          </div>
         </div>
       </div>
-      <div className="text-center flex flex-col justify-center items-center">
-        <div className="text-sm ">Built with</div>
-        <div className="flex">
-          <img src="tmdb.png" alt="TMDB.logo" className="w-12 h-12 p-1" />
-        </div>
+      <div className="text-center p-2 text-xs md:text-sm">
+        &copy; 2025 filmBox. All rights reserved
       </div>
     </div>
   );
