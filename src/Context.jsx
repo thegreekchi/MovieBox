@@ -21,6 +21,7 @@ const Context = ({ children }) => {
   const [isAuth, setIsAuth] = useState(null);
   const [bookmarks, setBookmarks] = useState([]);
   const [bookmarkId, setBookmarkId] = useState([]);
+  console.log("bookmarkId", bookmarkId);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, setIsAuth);
@@ -42,9 +43,9 @@ const Context = ({ children }) => {
     }
   }, [isAuth]);
 
-  const isBookmarked = (movieId) => bookmarkId.includes(movieId.id.toString());
+  const isBookmarked = (movie) => bookmarkId.includes(movie.id.toString());
 
-  const addbookmark = async (isAuth, movie) => {
+  const addbookmark = async (movie) => {
     const ref = doc(
       db,
       "users",
@@ -67,7 +68,7 @@ const Context = ({ children }) => {
     }
   };
 
-  const removeBookmark = async (isAuth, movie) => {
+  const removeBookmark = async (movie) => {
     const ref = doc(
       db,
       "users",
@@ -85,6 +86,26 @@ const Context = ({ children }) => {
     }
   };
 
+  const toggleBookmarks = async (movie) => {
+    if (!isAuth) return toast.error("sign in to continue!!");
+    try {
+      if (isBookmarked(movie)) {
+        await removeBookmark(movie);
+        setBookmarkId((prev) =>
+          prev.filter((id) => id !== movie.id.toString())
+        );
+        setBookmarks((prev) =>
+          prev.filter((bookmarkk) => bookmarkk.id !== movie.id.toString())
+        );
+      } else {
+        await addbookmark(movie);
+        setBookmarkId((prev) => [...prev, movie.id.toString()]);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -94,6 +115,7 @@ const Context = ({ children }) => {
         bookmarks,
         bookmarkId,
         isBookmarked,
+        toggleBookmarks,
       }}
     >
       {children}
