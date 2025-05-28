@@ -19,7 +19,7 @@ const Hero = () => {
       )}
       {randomMovie && (
         <>
-          <div className="relative sm:mt-12 md:mt-16 mt-10">
+          <div className="relative md:mt-12 mt-[37px]">
             <img
               className="w-full h-[300px] sm:h-[450px] object-cover object-center"
               src={
@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10" />
           </div>
           <div>
-            <div className="absolute font-Montserrat text-white top-[16%] md:top-[16%] px-5 py-3 sm:p-10">
+            <div className="absolute font-Montserrat text-white top-[29%] sm:top-[24%] md:top-[25%] px-5 py-3 sm:p-10">
               <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%] pb-1">
                 {randomMovie.title}
               </h1>
