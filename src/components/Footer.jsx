@@ -26,29 +26,29 @@ const Footer = () => {
               <img
                 src="firebase.png"
                 alt="firebase.png"
-                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+                className="w-[65px] h-[65px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
               />
               <img
                 src="React.png"
                 alt="react.png"
-                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+                className="w-[65px] h-[65px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
               />
             </div>
             <img
               src="tmdb.png"
               alt="tmdb.png"
-              className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+              className="w-[65px] h-[65px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
             />
             <div className="flex">
               <img
                 src="openAi.png"
                 alt="openAi.png"
-                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+                className="w-[65px] h-[65px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
               />
               <img
                 src="tailwind.png"
                 alt="tailwind.png"
-                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+                className="w-[65px] h-[65px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
               />
             </div>
           </div>
