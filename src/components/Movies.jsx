@@ -6,13 +6,13 @@ import { FaBookmark } from "react-icons/fa";
 import { AuthContext } from "../Context";
 
 const Movies = ({ movie, type }) => {
-  const { isBookmarked, toggleBookmarks } = useContext(AuthContext);
+  const { isBookmarked, toggleBookmarks, isAuth } = useContext(AuthContext);
   console.log("isBookmarked", isBookmarked);
   return (
     <div className="relative">
       <div
         className={`${
-          isBookmarked(movie) ? "text-orange-600" : "text-white"
+          isAuth && isBookmarked(movie) ? "text-orange-600" : "text-white"
         } absolute  flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-3 md:pt-5 pb-1 md:pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer`}
         onClick={() => toggleBookmarks(movie)}
       >
