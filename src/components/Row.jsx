@@ -67,14 +67,14 @@ const Row = ({ title, url, link, type }) => {
             </div>
             <div className="flex justify-center font-Montserrat p-2">
               <Link to={link}>
-                <button className="text-white font-light text-xs sm:text-sm border-2 bg-black/60 hover:bg-black/80 duration-200 rounded-md py-1 px-2 md:px-3 tracking-tight hover:scale-95 sm:hover:scale-90 flex justify-center items-center gap-2 group">
+                <button className="text-black font-medium text-xs sm:text-sm border-2 bg-[#D2AC47] hover:bg-[#ba9537] duration-300 rounded-md py-1 px-2 md:px-3 tracking-tight hover:text-white/80 flex justify-center items-center gap-2 group">
                   <span>More</span>
                   <FaArrowRight className=" group-hover:animate-pulse" />
                 </button>
               </Link>
             </div>
           </div>
-          <div className="h-1 bg-gradient-to-r from-black/70 to-black/70 via-white" />
+          <div className="h-1 bg-gradient-to-r from-[#D2AC47] to-[#D2AC47] via-white" />
         </div>
       )}
     </>

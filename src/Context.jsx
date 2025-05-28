@@ -87,7 +87,7 @@ const Context = ({ children }) => {
   };
 
   const toggleBookmarks = async (movie) => {
-    if (!isAuth) return toast.error("sign in to continue!!");
+    if (!isAuth) return toast.error("sign in to continue");
     try {
       if (isBookmarked(movie)) {
         await removeBookmark(movie);

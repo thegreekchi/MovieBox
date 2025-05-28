@@ -11,7 +11,7 @@ const Title = ({ title, url }) => {
           <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/60 via-white/70 to-black/60" />
         </div>
       ) : (
-        <div className="bg-slate-50 pt-4 w-full text-red-700 ">
+        <div className="bg-slate-50 pt-4 w-full text-[#644f15] ">
           <div className="drop-shadow-xl">{title}</div>
         </div>
       )}

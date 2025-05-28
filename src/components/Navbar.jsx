@@ -2,7 +2,7 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 // import { BsCameraReelsFill } from "react-icons/bs";
-import { CiMenuBurger } from "react-icons/ci";
+// import { CiMenuBurger } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiMinus, FiPlus } from "react-icons/fi";
@@ -13,6 +13,7 @@ import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import { RiMenuFill } from "react-icons/ri";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -73,7 +74,8 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
+      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-[#D2AC47] fixed top-0 w-full">
+        {/* <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full"> */}
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
             <div className="flex items-center">
@@ -83,10 +85,15 @@ const Navbar = () => {
               <span className="text-red-700 pt-1">film</span>
               <span className="text-blue-700 pt-1">BOX</span> */}
               <img
+                src="film41.png"
+                alt=""
+                className=" md:h-[55px] h-[40px] sm:h-[45px] object-contain pl-5"
+              />
+              {/* <img
                 src="Filmbox2.png"
                 alt=""
                 className="border-1 border-white md:h-[50px] h-[40px] sm:h-[45px] object-contain"
-              />
+              /> */}
             </div>
           </Link>
         </div>
@@ -98,23 +105,32 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="search"
-                className="hidden md:block bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
+                className="hidden md:block bg-[#1E1E1E] border border-[#D2AC47] rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#D2AC47] text-white sm:p-3 md:p-4 p-2 max-h-5 placeholder-gray-400 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
               />
             </form>
+            {/* <form action="">
+              <input
+                type="search"
+                name=""
+                id=""
+                placeholder="search"
+                className="hidden md:block bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
+              />
+            </form> */}
           </div>
         </div>
 
-        <div className="text-white flex justify-between items-center pr-4">
+        <div className="text-white flex justify-between items-center md:pr-8 pr-6">
           <div className="relative pr-12">
             <img
-              src="Chatgpt2.png"
+              src="Gpt11.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[25px] sm:h-[30px] cursor-pointer"
+              className="w-auto h-[22px] sm:h-[26px] cursor-pointer"
             />
           </div>
-          <CiMenuBurger
-            className=" text-xl sm:text-2xl cursor-pointer"
+          <RiMenuFill
+            className=" text-xl sm:text-2xl cursor-pointer text-[#D2AC47]"
             onClick={toggleNav}
           />
         </div>
