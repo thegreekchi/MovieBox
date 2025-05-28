@@ -114,10 +114,10 @@ const Navbar = () => {
               className="hidden text-3xl hover:text-orange-500 duration-200 cursor-pointer"
             />
             <img
-              src="chatgpt1.png"
+              src="Chatgpt2.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[30px]"
+              className="w-auto h-[25px] sm:h-[30px]"
             />
             <FaRobot
               title="AI Chat"

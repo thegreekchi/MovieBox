@@ -3,7 +3,7 @@ const Footer = () => {
     <div className=" bg-black text-white font-Montserrat p-4 ">
       {/* <div className=" bg-white text-black font-Montserrat p-4"> */}
 
-      <div className="flex-col w-[80%] mx-auto justify-center items-center">
+      <div className="flex-col w-[90%] mx-auto justify-around items-center">
         <div className="flex justify-center items-center pt-4">
           <div className="flex text-center font-bold text-lg">
             <img
@@ -22,16 +22,35 @@ const Footer = () => {
               alt="footer.png"
               className="w-60 p-1 rounded-lg"
             /> */}
+            <div className="flex">
+              <img
+                src="firebase.png"
+                alt="firebase.png"
+                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+              />
+              <img
+                src="React.png"
+                alt="react.png"
+                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+              />
+            </div>
             <img
-              src="firebase.png"
-              alt="footer.png"
-              className="w-28 h-28 object-cover rounded-full p-1"
+              src="tmdb.png"
+              alt="tmdb.png"
+              className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
             />
-            <img
-              src="React.png"
-              alt="react.png"
-              className="w-28 h-28 object-cover rounded-full p-1"
-            />
+            <div className="flex">
+              <img
+                src="openAi.png"
+                alt="openAi.png"
+                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+              />
+              <img
+                src="tailwind.png"
+                alt="tailwind.png"
+                className="w-[70px] h-[70px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full p-1"
+              />
+            </div>
           </div>
         </div>
       </div>
