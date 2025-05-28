@@ -33,10 +33,10 @@ const Hero = () => {
           </div>
           <div>
             <div className="absolute font-Montserrat text-white top-[16%] md:top-[16%] px-[35px] sm:px-[45px] py-3 sm:p-10">
-              <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%] pb-1">
+              <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%] pb-1 line-clamp-2">
                 {randomMovie.title}
               </h1>
-              <h3 className="font-semi-bold text-sm sm:text-base md:xl line-clamp-4 sm:line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
+              <h3 className="font-semi-bold text-sm sm:text-base md:xl line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
                 {randomMovie.overview}
               </h3>
               <h3 className="font-semibold text-xs sm:text-base pt-2">
