@@ -67,7 +67,7 @@ const Row = ({ title, url, link, type }) => {
             </div>
             <div className="flex justify-center font-Montserrat p-2">
               <Link to={link}>
-                <button className="text-black font-medium text-xs sm:text-sm border-2 bg-[#D2AC47] hover:bg-[#ba9537] duration-300 rounded-md py-1 px-2 md:px-3 tracking-tight hover:text-white/80 flex justify-center items-center gap-2 group">
+                <button className="text-black font-medium text-xs sm:text-sm border-2 bg-[#e7b93d] hover:bg-[#ba9537] duration-300 rounded-md py-1 px-2 md:px-3 tracking-tight hover:text-white/80 flex justify-center items-center gap-2 group">
                   <span>More</span>
                   <FaArrowRight className=" group-hover:animate-pulse" />
                 </button>

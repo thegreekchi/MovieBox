@@ -74,7 +74,7 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
+      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30  border-[#D2AC47] fixed top-0 w-full">
         {/* <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full"> */}
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
@@ -150,7 +150,7 @@ const Navbar = () => {
             : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-50  duration-500 transition-all"
         }
       >
-        <div className="w-full p-4 pl-6 bg-gradient-to-r from-blue-900 to-black relative text-[#f0c243] border-b-4 border-orange-500 flex justify-between items-center">
+        <div className="w-full p-4 pl-6 bg-gradient-to-r from-black via-black/90 to-blue-900 relative text-[#f0c243] border-b-2 border-orange-500 flex justify-between items-center">
           <img
             src="filmBoxbg2.png"
             alt=""

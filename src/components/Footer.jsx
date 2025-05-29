@@ -9,7 +9,7 @@ const Footer = () => {
             <img
               src="filmBoxbg2.png"
               alt=""
-              className="border-1 border-white md:h-[70px] h-[40px] sm:h-[45px] object-contain"
+              className="border-1 border-white md:h-[70px] h-[50px] sm:h-[60px] object-contain"
             />
             {/* <img
               src="Filmbox2.png"
