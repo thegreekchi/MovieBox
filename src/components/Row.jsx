@@ -74,7 +74,7 @@ const Row = ({ title, url, link, type }) => {
               </Link>
             </div>
           </div>
-          <div className="h-1 bg-gradient-to-r from-[#D2AC47] to-[#D2AC47] via-white" />
+          <div className="h-1 bg-gradient-to-r from-black/70 to-black/70 from via-white" />
         </div>
       )}
     </>

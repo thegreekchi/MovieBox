@@ -74,7 +74,7 @@ const Navbar = () => {
 
   return (
     <div className="font-Montserrat">
-      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-[#D2AC47] fixed top-0 w-full">
+      <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full">
         {/* <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full"> */}
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
@@ -85,9 +85,9 @@ const Navbar = () => {
               <span className="text-red-700 pt-1">film</span>
               <span className="text-blue-700 pt-1">BOX</span> */}
               <img
-                src="film41.png"
+                src="filmBoxbg2.png"
                 alt=""
-                className=" md:h-[55px] h-[40px] sm:h-[45px] object-contain pl-5"
+                className=" md:h-[55px] h-[42px] sm:h-[50px] object-contain pl-3 sm:pl-5"
               />
               {/* <img
                 src="Filmbox2.png"
@@ -150,12 +150,12 @@ const Navbar = () => {
             : "fixed w-[40%] h-screen top-0 right-[-100%] bg-white z-50  duration-500 transition-all"
         }
       >
-        <div className="w-full p-4 pl-6 bg-gradient-to-r from-blue-900 to-black relative text-white border-b-4 border-red-500 flex justify-between items-center">
+        <div className="w-full p-4 pl-6 bg-gradient-to-r from-blue-900 to-black relative text-[#f0c243] border-b-4 border-orange-500 flex justify-between items-center">
           <img
-            src="Filmbox4.png"
+            src="filmBoxbg2.png"
             alt=""
             className="border-1 border-white
-          md:h-[35px] h-[25px] sm:h-[30px] object-contain"
+          md:h-[39px] h-[29px] sm:h-[34px] object-contain"
           />
 
           <AiOutlineClose
@@ -178,7 +178,7 @@ const Navbar = () => {
         ) : (
           <div className="md:h-12 h-8"></div>
         )}
-        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-sm mt-4">
+        <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-md mt-4">
           <form action="" className="">
             <input
               type="search"
@@ -186,7 +186,7 @@ const Navbar = () => {
               id=""
               aria-label="search movie"
               placeholder="search..."
-              className="w-full bg-transparent text-white italic placeholder-white p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:rounded-sm"
+              className="w-full text-white italic placeholder-gray-400 p-2 text-sm focus:rounded-md bg-gray-600 border border-[#D2AC47] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
             />
           </form>
         </div>
@@ -268,11 +268,22 @@ const Navbar = () => {
                 Watchlist
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to=""
+                className="flex items-center
+              hover:bg-gray-300
+              duration-100 p-1"
+              >
+                <img src="chatgpt3.png" alt="" className="h-[20px] mx-2" />
+                AI Chat
+              </NavLink>
+            </li>
             <li className="mb-4">
               {!isAuth ? (
                 <button
                   onClick={signIn}
-                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%] text-white/70 hover:text-white rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-sm focus:ring-offset-1 mb-1 mt-2"
+                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%] text-[#D2AC47] hover:text-white/70 rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-[#D2AC47] focus:rounded-sm focus:ring-offset-1 mb-1 mt-2 border border-[#D2AC47]"
                 >
                   <FcGoogle className="mr-2 text-lg " />
                   Sign in with Google
@@ -280,7 +291,7 @@ const Navbar = () => {
               ) : (
                 <button
                   onClick={logOut}
-                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%] text-white/70 hover:text-white rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:rounded-sm focus:ring-offset-1 mb-1 mt-2"
+                  className="flex items-center justify-center bg-gray-800  hover:shadow-md shadow-black duration-200 p-2 w-[78%] sm:w-[85%]  text-[#D2AC47] hover:text-white/70 rounded-sm text-sm ml-2 focus:outline-none focus:ring-1 focus:ring-[#D2AC47] focus:rounded-sm focus:ring-offset-1 mb-1 mt-2 "
                 >
                   <PiSignOutBold className="mr-2 text-lg" />
                   Sign Out

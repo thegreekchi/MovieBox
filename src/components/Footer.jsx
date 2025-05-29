@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex justify-center items-center pt-2">
           <div className="flex text-center font-bold text-lg">
             <img
-              src="film41.png"
+              src="filmBoxbg2.png"
               alt=""
               className="border-1 border-white md:h-[70px] h-[40px] sm:h-[45px] object-contain"
             />
