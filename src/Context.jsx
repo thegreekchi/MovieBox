@@ -24,6 +24,7 @@ const Context = ({ children }) => {
   const [bookmarkId, setBookmarkId] = useState([]);
   const [loading, setLoading] = useState(true);
   console.log("bookmarkId", bookmarkId);
+  console.log("bookmarks", bookmarks);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -68,7 +69,7 @@ const Context = ({ children }) => {
     const movieData = {
       id: movie.id,
       type,
-      title: movie.title,
+      title: movie.title || movie.name,
       overview: movie.overview,
       poster_path: movie.poster_path || movie.backdrop_path,
       timeStamp: serverTimestamp(),

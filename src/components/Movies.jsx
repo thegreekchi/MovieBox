@@ -7,7 +7,6 @@ import { AuthContext } from "../Context";
 
 const Movies = ({ movie, type }) => {
   const { isBookmarked, toggleBookmarks, isAuth } = useContext(AuthContext);
-  console.log("isBookmarked", isBookmarked);
   return (
     <div className="relative">
       <div
