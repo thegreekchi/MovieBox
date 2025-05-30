@@ -18,7 +18,7 @@ import Scroll from "./components/Scroll";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Toaster
         position="top-center"
         toastOptions={{
@@ -26,39 +26,33 @@ function App() {
           style: {
             fontFamily: "Montserrat, sans-serif",
           },
-          // style: {
-          //   background: "#616569",
-          //   color: "#fff",
-          // },
-          // success: {
-          //   style: { background: "#2E6F40" },
-          // },
-          // error: { style: { background: "red" } },
         }}
       />
       <Navbar />
       <Scroll />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="trendingMovies" element={<TrendingMovies />} />
-        <Route path="upcomingMovies" element={<UpcomingMovies />} />
-        <Route path="popularMovies" element={<PopularMovies />} />
-        <Route path="topRatedMovies" element={<TopRatedMovies />} />
-        <Route path="tvAiring" element={<TvAiring />} />
-        <Route path="tvPopular" element={<TvPopular />} />
-        <Route path="tvTopRated" element={<TvTopRated />} />
-        <Route path="media/:type/:id" element={<MovieDetail />} />
-        <Route
-          path="bookmarks"
-          element={
-            <ProtectedRoutes>
-              <Bookmarks />
-            </ProtectedRoutes>
-          }
-        />
-      </Routes>
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="trendingMovies" element={<TrendingMovies />} />
+          <Route path="upcomingMovies" element={<UpcomingMovies />} />
+          <Route path="popularMovies" element={<PopularMovies />} />
+          <Route path="topRatedMovies" element={<TopRatedMovies />} />
+          <Route path="tvAiring" element={<TvAiring />} />
+          <Route path="tvPopular" element={<TvPopular />} />
+          <Route path="tvTopRated" element={<TvTopRated />} />
+          <Route path="media/:type/:id" element={<MovieDetail />} />
+          <Route
+            path="bookmarks"
+            element={
+              <ProtectedRoutes>
+                <Bookmarks />
+              </ProtectedRoutes>
+            }
+          />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
