@@ -9,7 +9,7 @@ const MenuMovies1 = ({ movie, type }) => {
   const { removeBookmark } = useContext(AuthContext);
   return (
     <div className="relative">
-      <div className="absolute right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-sm sm:text-base">
+      <div className="absolute right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-base">
         <FaTrash
           className="text-red-600 cursor-pointer"
           onClick={() => removeBookmark(movie)}
