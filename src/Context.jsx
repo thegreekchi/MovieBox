@@ -5,7 +5,8 @@ import {
   collection,
   deleteDoc,
   doc,
-  getDocs,
+  // getDocs,
+  onSnapshot,
   orderBy,
   query,
   serverTimestamp,
@@ -21,10 +22,14 @@ const Context = ({ children }) => {
   const [isAuth, setIsAuth] = useState(null);
   const [bookmarks, setBookmarks] = useState([]);
   const [bookmarkId, setBookmarkId] = useState([]);
+  const [loading, setLoading] = useState(true);
   console.log("bookmarkId", bookmarkId);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, setIsAuth);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsAuth(user);
+      setLoading(false);
+    });
     return () => unsubscribe();
   }, []);
 
@@ -34,18 +39,25 @@ const Context = ({ children }) => {
         collection(db, "users", isAuth.email, "bookmarks"),
         orderBy("timeStamp", "desc")
       );
-      getDocs(bookmarkRef).then((snapShot) => {
+      const unsubscribe = onSnapshot(bookmarkRef, (snapShot) => {
         setBookmarks(
           snapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         );
         setBookmarkId(snapShot.docs.map((doc) => doc.id));
       });
+      // getDocs(bookmarkRef).then((snapShot) => {
+      //   setBookmarks(
+      //     snapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+      //   );
+      //   setBookmarkId(snapShot.docs.map((doc) => doc.id));
+      // });
+      return () => unsubscribe();
     }
   }, [isAuth]);
 
   const isBookmarked = (movie) => bookmarkId.includes(movie.id.toString());
 
-  const addbookmark = async (movie) => {
+  const addbookmark = async (movie, type) => {
     const ref = doc(
       db,
       "users",
@@ -55,8 +67,10 @@ const Context = ({ children }) => {
     );
     const movieData = {
       id: movie.id,
+      type,
       title: movie.title,
-      img: movie.poster_path || movie.backdrop_path,
+      overview: movie.overview,
+      poster_path: movie.poster_path || movie.backdrop_path,
       timeStamp: serverTimestamp(),
     };
     try {
@@ -86,7 +100,7 @@ const Context = ({ children }) => {
     }
   };
 
-  const toggleBookmarks = async (movie) => {
+  const toggleBookmarks = async (movie, type) => {
     if (!isAuth) return toast.error("sign in to continue");
     try {
       if (isBookmarked(movie)) {
@@ -98,7 +112,7 @@ const Context = ({ children }) => {
           prev.filter((bookmarkk) => bookmarkk.id !== movie.id.toString())
         );
       } else {
-        await addbookmark(movie);
+        await addbookmark(movie, type);
         setBookmarkId((prev) => [...prev, movie.id.toString()]);
       }
     } catch (error) {
@@ -116,6 +130,7 @@ const Context = ({ children }) => {
         bookmarkId,
         isBookmarked,
         toggleBookmarks,
+        loading,
       }}
     >
       {children}

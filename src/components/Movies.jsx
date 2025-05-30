@@ -14,7 +14,7 @@ const Movies = ({ movie, type }) => {
         className={`${
           isAuth && isBookmarked(movie) ? "text-[#ffca37]" : "text-white"
         } absolute  flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-3 md:pt-5 pb-1 md:pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer`}
-        onClick={() => toggleBookmarks(movie)}
+        onClick={() => toggleBookmarks(movie, type)}
       >
         <FaBookmark className="" />
       </div>

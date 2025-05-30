@@ -20,7 +20,7 @@ const Row = ({ title, url, link, type }) => {
   return (
     <>
       {loading && (
-        <div className="bg-white pt-4">
+        <div className="bg-white pt-2 sm:pt-3">
           <div className="w-[90%] mx-auto p-5">
             <div className="w-20 h-4 rounded-md bg-black/50 relative overflow-hidden mb-6">
               <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/50 via-white/70 to-black/50" />
@@ -29,7 +29,7 @@ const Row = ({ title, url, link, type }) => {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <div
                   key={n}
-                  className="min-w-32 h-32 sm:min-w-40 sm:h-40 rounded-md bg-black/50 relative overflow-hidden"
+                  className="rounded-sm min-w-28 h-32 sm:min-w-36 sm:h-44 bg-black/50 relative overflow-hidden"
                 >
                   <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/50 via-white/60 to-black/50" />
                 </div>

@@ -7,7 +7,7 @@ const Title = ({ title, url }) => {
   return (
     <div className="text-center flex justify-center font-Montserrat font-semibold text-lg md:text-2xl">
       {loading ? (
-        <div className="w-28 h-6 md:w-32 md:h-8 rounded-sm bg-black/60 relative overflow-hidden mb-6 flex justify-center mt-5">
+        <div className="w-28 h-6 md:w-32 md:h-8 rounded-md bg-black/60 relative overflow-hidden mb-6 flex justify-center mt-5">
           <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/60 via-white/70 to-black/60" />
         </div>
       ) : (

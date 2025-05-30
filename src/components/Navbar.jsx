@@ -259,7 +259,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to=""
+                to="bookmarks"
                 className="flex items-center
               hover:bg-gray-300
               duration-100 p-1"

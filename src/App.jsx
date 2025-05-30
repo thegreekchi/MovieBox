@@ -12,6 +12,8 @@ import MovieDetail from "./pages/MediaDetail/MovieDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
+import Bookmarks from "./pages/Bookmarks";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
   return (
@@ -44,6 +46,14 @@ function App() {
         <Route path="tvPopular" element={<TvPopular />} />
         <Route path="tvTopRated" element={<TvTopRated />} />
         <Route path="media/:type/:id" element={<MovieDetail />} />
+        <Route
+          path="bookmarks"
+          element={
+            <ProtectedRoutes>
+              <Bookmarks />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
       <Footer />
     </>
