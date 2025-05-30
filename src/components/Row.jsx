@@ -29,7 +29,7 @@ const Row = ({ title, url, link, type }) => {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <div
                   key={n}
-                  className="rounded-sm min-w-28 h-32 sm:min-w-36 sm:h-44 bg-black/50 relative overflow-hidden"
+                  className="rounded-md min-w-36 h-48 sm:h-56 sm:min-w-44  md:min-w-48 md:h-64 bg-black/50 relative overflow-hidden"
                 >
                   <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/50 via-white/60 to-black/50" />
                 </div>

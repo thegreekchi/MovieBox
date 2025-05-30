@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="relative">
       {loading && (
-        <div className="h-[300px] sm:h-[450px] bg-black/70 relative overflow-hidden">
+        <div className="h-[320px] sm:h-[450px] bg-black/70 relative overflow-hidden">
           <div className="absolute shimmer inset-0 opacity-30  shadow-white bg-gradient-to-r from-black/70 via-white/70 to-black/70" />
         </div>
       )}
