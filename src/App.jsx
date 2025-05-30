@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import Bookmarks from "./pages/Bookmarks";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Scroll from "./components/Scroll";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         }}
       />
       <Navbar />
+      <Scroll />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="trendingMovies" element={<TrendingMovies />} />
