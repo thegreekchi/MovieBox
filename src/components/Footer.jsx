@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex justify-center items-center pt-2">
           <div className="flex text-center font-bold text-lg">
             <img
-              src="filmBoxbg2.png"
+              src="/filmBoxbg2.png"
               alt=""
               className="border-1 border-white md:h-[70px] h-[50px] sm:h-[60px] object-contain"
             />
@@ -29,29 +29,29 @@ const Footer = () => {
             /> */}
             <div className="flex">
               <img
-                src="firebase.png"
+                src="/firebase.png"
                 alt="firebase.png"
                 className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full border-2 border-[#ffca37]"
               />
               <img
-                src="React.png"
+                src="/React.png"
                 alt="react.png"
                 className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full border-2 border-[#ffca37]"
               />
             </div>
             <img
-              src="tmdb.png"
+              src="/tmdb.png"
               alt="tmdb.png"
               className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full border-2 border-[#ffca37]"
             />
             <div className="flex">
               <img
-                src="openAi.png"
+                src="/openAi.png"
                 alt="openAi.png"
                 className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full border-2 border-[#ffca37]"
               />
               <img
-                src="tailwind.png"
+                src="/tailwind.png"
                 alt="tailwind.png"
                 className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] sm:w-[85px] sm:h-[85px]  object-cover rounded-full border-2 border-[#ffca37]"
               />

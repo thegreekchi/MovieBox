@@ -85,7 +85,7 @@ const Navbar = () => {
               <span className="text-red-700 pt-1">film</span>
               <span className="text-blue-700 pt-1">BOX</span> */}
               <img
-                src="filmBoxbg2.png"
+                src="/filmBoxbg2.png"
                 alt=""
                 className=" md:h-[55px] h-[42px] sm:h-[50px] object-contain pl-3 sm:pl-5"
               />
@@ -123,7 +123,7 @@ const Navbar = () => {
         <div className="text-white flex justify-between items-center md:pr-8 pr-6">
           <div className="relative pr-12">
             <img
-              src="Gpt11.png"
+              src="/Gpt11.png"
               title="AI Chat"
               alt=""
               className="w-auto h-[22px] sm:h-[26px] cursor-pointer"
@@ -152,7 +152,7 @@ const Navbar = () => {
       >
         <div className="w-full p-4 pl-6 bg-gradient-to-r from-black via-black/90 to-blue-900 relative text-[#f0c243] border-b-2 border-orange-500 flex justify-between items-center">
           <img
-            src="filmBoxbg2.png"
+            src="/filmBoxbg2.png"
             alt=""
             className="border-1 border-white
           md:h-[39px] h-[29px] sm:h-[34px] object-contain"
