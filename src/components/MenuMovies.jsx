@@ -12,7 +12,7 @@ const MenuMovies = ({ movie, type }) => {
       <div
         className={`${
           isAuth && isBookmarked(movie) ? "text-[#ffca37]" : "text-gray-700"
-        } absolute  hover:text-gray-500 duration-200 right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-base cursor-pointer p-1`}
+        } absolute  duration-200 right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-base cursor-pointer p-1`}
         onClick={() => toggleBookmarks(movie, type)}
       >
         <FaBookmark />
