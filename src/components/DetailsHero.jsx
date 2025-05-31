@@ -93,7 +93,7 @@ const DetailsHero = ({ data }) => {
         </div>
 
         <div className="flex mt-2 md:hidden w-[80%] mx-auto gap-4 tracking-tighter ">
-          <div className="">
+          <div className="relative">
             <img
               className=" mt-4 rounded-md  mx-auto min-h-[240px] max-h-[600px] sm:h-[300px] object-contain object-center md:hidden shadow-md shadow-black"
               src={

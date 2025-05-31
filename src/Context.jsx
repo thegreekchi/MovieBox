@@ -67,11 +67,16 @@ const Context = ({ children }) => {
       movie.id.toString()
     );
     const movieData = {
-      id: movie.id,
+      id: movie.id || movie.details.id,
       type,
-      title: movie.title || movie.name,
-      overview: movie.overview,
-      poster_path: movie.poster_path || movie.backdrop_path,
+      title:
+        movie.title || movie.name || movie.details.title || movie.details.name,
+      overview: movie.overview || movie.details.overview,
+      poster_path:
+        movie.poster_path ||
+        movie.backdrop_path ||
+        movie.details.poster_path ||
+        movie.details.backdrop_path,
       timeStamp: serverTimestamp(),
     };
     try {
