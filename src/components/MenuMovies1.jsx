@@ -9,17 +9,17 @@ const MenuMovies1 = ({ movie, type }) => {
   const { removeBookmark } = useContext(AuthContext);
   return (
     <div className="relative">
-      <div className="absolute right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-base">
-        <FaTrash
-          className="text-red-600 cursor-pointer"
-          onClick={() => removeBookmark(movie)}
-        />
+      <div
+        className="absolute right-6 sm:right-8 bottom-3 sm:bottom-5 md:text-lg text-base p-1 text-red-600 cursor-pointer"
+        onClick={() => removeBookmark(movie)}
+      >
+        <FaTrash className="" />
       </div>
       <Link to={`/media/${type}/${movie.id}`}>
         <div className="rounded-sm shadow-md shadow-black/20 flex hover:shadow-lg hover:shadow-black/40 duration-300 cursor-pointer mb-8">
           <div>
             <img
-              className="min-w-28 h-[134px] sm:min-w-36 sm:h-44 object-fill object-center rounded-sm"
+              className="min-w-28 h-[137px] sm:min-w-36 sm:h-44 object-fill object-center rounded-sm"
               src={
                 movie.poster_path
                   ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
