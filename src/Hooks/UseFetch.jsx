@@ -42,6 +42,7 @@ const useFetch = (endpoint) => {
     const abort = new AbortController();
 
     if (genreId) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       endpoint += `&with_genres=${genreId}`;
     }
 

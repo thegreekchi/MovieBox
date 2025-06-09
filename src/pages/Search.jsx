@@ -9,6 +9,9 @@ const Search = () => {
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  // eslint-disable-next-line no-unused-vars
+  const [totalPages, setTotalPages] = useState(1);
 
   console.log(results);
   console.log(loading);
@@ -25,6 +28,14 @@ const Search = () => {
 
   const navigate = useNavigate();
 
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev < totalPages ? prev + 1 : totalPages));
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim()) return;
@@ -39,7 +50,7 @@ const Search = () => {
 
     const url = `https://api.themoviedb.org/3/search/multi?api_key=${
       import.meta.env.VITE_TMDB_API_KEY
-    }&query=${encodeURIComponent(
+    }&page=${currentPage}&query=${encodeURIComponent(
       initialQuery
     )}&include_adult=false&language=en-US`;
 
@@ -50,6 +61,7 @@ const Search = () => {
       })
       .then((data) => {
         console.log("data", data);
+        setTotalPages(data.total_pages);
         const filtered = data.results.filter(
           (item) => item.media_type === "movie" || item.media_type === "tv"
         );
@@ -60,7 +72,7 @@ const Search = () => {
         setResults([]);
       })
       .finally(() => setLoading(false));
-  }, [initialQuery]);
+  }, [initialQuery, currentPage]);
 
   return (
     <div className="p-8 md:w-[95%] w-[100%] mx-auto font-Montserrat sm:mt-12 md:mt-16 mt-[42px]">
@@ -106,13 +118,13 @@ const Search = () => {
         </div>
         <div className="flex w-[60%] mx-auto justify-between mt-16 mb-8">
           <FaCircleChevronLeft
-            // onClick={prevPage}
+            onClick={prevPage}
             size={24}
             className="text-[#679267] z-10 cursor-pointer hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
           />
-          <span className="font-bold"> 1</span>
+          <span className="font-bold">{currentPage}</span>
           <FaCircleChevronRight
-            // onClick={nextPage}
+            onClick={nextPage}
             size={24}
             className="text-[#679267] z-10 cursor-pointer hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
           />
