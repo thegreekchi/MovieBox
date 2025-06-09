@@ -16,13 +16,15 @@ import { motion } from "framer-motion";
 import { RiMenuFill } from "react-icons/ri";
 
 const Navbar = () => {
+  const location = useLocation();
   const [nav, setNav] = useState(false);
   const [subMenu, setSubMenu] = useState({
     subMenu1: false,
     subMenu2: false,
   });
   console.log(subMenu);
-  const [query, setQuery] = useState("");
+  const initialQuery = new URLSearchParams(location.search).get("q") || "";
+  const [query, setQuery] = useState(initialQuery);
 
   const provider = new GoogleAuthProvider();
 
@@ -68,10 +70,14 @@ const Navbar = () => {
     };
   }, [nav]);
 
-  const location = useLocation();
   useEffect(() => {
     setNav(false);
   }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    setQuery(initialQuery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search]);
 
   const navigate = useNavigate();
 
