@@ -15,6 +15,7 @@ import { Toaster } from "react-hot-toast";
 import Bookmarks from "./pages/Bookmarks";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Scroll from "./components/Scroll";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
           <Route path="trendingMovies" element={<TrendingMovies />} />
           <Route path="upcomingMovies" element={<UpcomingMovies />} />
           <Route path="popularMovies" element={<PopularMovies />} />

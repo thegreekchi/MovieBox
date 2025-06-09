@@ -7,7 +7,7 @@ import { FaBookmark } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { MdLiveTv, MdLocalMovies } from "react-icons/md";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../firebaseConfig";
 import { AuthContext } from "../Context";
 import { PiSignOutBold } from "react-icons/pi";
@@ -22,6 +22,7 @@ const Navbar = () => {
     subMenu2: false,
   });
   console.log(subMenu);
+  const [query, setQuery] = useState("");
 
   const provider = new GoogleAuthProvider();
 
@@ -70,53 +71,43 @@ const Navbar = () => {
   const location = useLocation();
   useEffect(() => {
     setNav(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    navigate(`/search?q=${encodeURIComponent(query.trim())}`);
+  };
 
   return (
     <div className="font-Montserrat">
       <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30  border-[#D2AC47] fixed top-0 w-full">
-        {/* <div className=" bg-black backdrop-blur-md p-2 py-[10px] sm:p-3 flex justify-between items-center md:grid md:grid-cols-5  z-30 border-b-2 border-orange-500 fixed top-0 w-full"> */}
         <div className="font-bold text-lg tracking-tighter md:tracking-wide scale-y-110 sm:text-xl md:text-2xl md:col-span-1 leading-loose cursor-pointer border-1">
           <Link to="/">
             <div className="flex items-center">
-              {/* <span className="">
-                <BsCameraReelsFill className="text-red-700 text-lg sm:text-xl" />
-              </span>
-              <span className="text-red-700 pt-1">film</span>
-              <span className="text-blue-700 pt-1">BOX</span> */}
               <img
                 src="/filmBoxbg2.png"
                 alt=""
                 className=" md:h-[55px] h-[42px] sm:h-[50px] object-contain pl-3 sm:pl-5"
               />
-              {/* <img
-                src="Filmbox2.png"
-                alt=""
-                className="border-1 border-white md:h-[50px] h-[40px] sm:h-[45px] object-contain"
-              /> */}
             </div>
           </Link>
         </div>
         <div className="flex justify-around items-center text-white md:col-span-3">
           <div>
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
               <input
                 type="search"
                 name=""
                 id=""
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder="search"
                 className="hidden md:block bg-[#1E1E1E] border border-[#D2AC47] rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#D2AC47] text-white sm:p-3 md:p-4 p-2 max-h-5 placeholder-gray-400 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
               />
             </form>
-            {/* <form action="">
-              <input
-                type="search"
-                name=""
-                id=""
-                placeholder="search"
-                className="hidden md:block bg-white/80 rounded-md text-sm focus:outline-none text-black sm:p-3 md:p-4 p-2 max-h-5 placeholder-black/80 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
-              />
-            </form> */}
           </div>
         </div>
 
@@ -179,12 +170,14 @@ const Navbar = () => {
           <div className="md:h-12 h-8"></div>
         )}
         <div className="w-[78%] sm:w-[80%] mx-4 bg-black/40 rounded-md mt-4">
-          <form action="" className="">
+          <form action="" className="" onSubmit={handleSubmit}>
             <input
               type="search"
               name=""
               id=""
               aria-label="search movie"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               placeholder="search..."
               className="w-full text-white italic placeholder-gray-400 p-2 text-sm focus:rounded-md bg-gray-600 border border-[#D2AC47] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
             />
