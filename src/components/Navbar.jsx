@@ -118,14 +118,16 @@ const Navbar = () => {
         </div>
 
         <div className="text-white flex justify-between items-center md:pr-8 pr-6">
-          <div className="relative pr-12">
-            <img
-              src="/Gpt11.png"
-              title="AI Chat"
-              alt=""
-              className="w-auto h-[22px] sm:h-[26px] cursor-pointer"
-            />
-          </div>
+          <Link to="chat">
+            <div className="relative pr-12">
+              <img
+                src="/Gpt11.png"
+                title="AI Chat"
+                alt=""
+                className="w-auto h-[22px] sm:h-[26px] cursor-pointer"
+              />
+            </div>
+          </Link>
           <RiMenuFill
             className=" text-xl sm:text-2xl cursor-pointer text-[#D2AC47]"
             onClick={toggleNav}

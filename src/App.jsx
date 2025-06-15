@@ -16,6 +16,7 @@ import Bookmarks from "./pages/Bookmarks";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Scroll from "./components/Scroll";
 import Search from "./pages/Search";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="tvAiring" element={<TvAiring />} />
           <Route path="tvPopular" element={<TvPopular />} />
           <Route path="tvTopRated" element={<TvTopRated />} />
+          <Route path="chat" element={<Chat />} />
           <Route path="media/:type/:id" element={<MovieDetail />} />
           <Route
             path="bookmarks"
