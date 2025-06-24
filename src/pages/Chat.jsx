@@ -20,7 +20,7 @@ const Chat = () => {
               src="/chatgpt3.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             />
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -36,7 +36,7 @@ const Chat = () => {
               src="/Gpt11.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             /> */}
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -48,7 +48,7 @@ const Chat = () => {
               src="/chatgpt3.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             />
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -64,7 +64,7 @@ const Chat = () => {
               src="/Gpt11.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             /> */}
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -76,7 +76,7 @@ const Chat = () => {
               src="/chatgpt3.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             />
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -92,7 +92,7 @@ const Chat = () => {
               src="/Gpt11.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[20px] sm:h-[22px]"
+              className="w-auto h-[14px] sm:h-[20px]"
             /> */}
             <div className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
