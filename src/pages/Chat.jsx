@@ -1,5 +1,6 @@
 import { BiSolidMessageAdd } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
 import TextareaAutosize from "react-textarea-autosize";
 const Chat = () => {
   return (
@@ -101,14 +102,17 @@ const Chat = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-[100%] sm:w-[80%] mx-auto mb-0"> */}
-      <TextareaAutosize
-        minRows={1}
-        maxRows={5}
-        placeholder="Please type a message"
-        className="resize-none w-full text-white placeholder-gray-300 p-3 text-sm sm:text-base focus:rounded-t-lg bg-gray-700 border border-[#5f5e5c] rounded-t-lg focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
-      />
-      {/* </div> */}
+      <div className=" px-3 text-white text-sm sm:text-base focus-within:rounded-t-lg bg-gray-700 border border-gray-700 rounded-t-lg focus:outline-none focus-within:ring-1 focus-within:ring-[#D2AC47] group flex items-center transition-all">
+        <TextareaAutosize
+          minRows={1}
+          maxRows={5}
+          placeholder="Please type a message"
+          className="resize-none w-[96%] h-full placeholder-gray-300 block bg-transparent focus:outline-none py-3"
+        />
+        <button className="duration-300 group-focus-within:rotate-[40deg] hover:rotate-[40deg] mr-3 sm:mr-2 text-xl">
+          <IoIosSend />
+        </button>
+      </div>
     </div>
   );
 };
