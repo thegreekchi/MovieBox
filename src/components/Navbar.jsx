@@ -110,7 +110,7 @@ const Navbar = () => {
                 id=""
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="search"
+                placeholder="Search"
                 className="hidden md:block bg-[#1E1E1E] border border-[#D2AC47] rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#D2AC47] text-white sm:p-3 md:p-4 p-2 max-h-5 placeholder-gray-400 w-[175px] mt-1 sm:w-52 md:w-64 mx-auto"
               />
             </form>
@@ -186,7 +186,7 @@ const Navbar = () => {
               aria-label="search movie"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="search..."
+              placeholder="Search..."
               className="w-full text-white italic placeholder-gray-400 p-2 text-sm focus:rounded-md bg-gray-600 border border-[#D2AC47] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
             />
           </form>
