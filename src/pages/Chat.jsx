@@ -106,7 +106,7 @@ const Chat = () => {
         minRows={1}
         maxRows={5}
         placeholder="please type a message"
-        className="resize-none w-full text-white placeholder-gray-400 p-2 md:p-3 text-sm sm:text-base focus:rounded-t-lg bg-gray-700 border border-[#5f5e5c] rounded-t-lg focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
+        className="resize-none w-full text-white placeholder-gray-400 p-3 text-sm sm:text-base focus:rounded-t-lg bg-gray-700 border border-[#5f5e5c] rounded-t-lg focus:outline-none focus:ring-1 focus:ring-[#D2AC47] "
       />
       {/* </div> */}
     </div>
