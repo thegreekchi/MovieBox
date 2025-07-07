@@ -37,7 +37,7 @@ const Context = ({ children }) => {
   useEffect(() => {
     if (isAuth) {
       const bookmarkRef = query(
-        collection(db, "users", isAuth.email, "bookmarks"),
+        collection(db, "users", auth.currentUser.uid, "bookmarks"),
         orderBy("timeStamp", "desc")
       );
       const unsubscribe = onSnapshot(bookmarkRef, (snapShot) => {
@@ -62,11 +62,13 @@ const Context = ({ children }) => {
     const ref = doc(
       db,
       "users",
-      isAuth.email,
+      auth.currentUser.uid,
+      // isAuth.email,
       "bookmarks",
       movie.id.toString()
     );
     const movieData = {
+      email: auth.currentUser.email,
       id: movie.id || movie.details.id,
       type,
       title:
@@ -92,7 +94,7 @@ const Context = ({ children }) => {
     const ref = doc(
       db,
       "users",
-      isAuth.email,
+      auth.currentUser.uid,
       "bookmarks",
       movie.id.toString()
     );
