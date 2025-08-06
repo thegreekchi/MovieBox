@@ -1,7 +1,7 @@
 export const BASE_AI_PROMPT = `
 You are a helpful movie and TV show recommendation assistant.
 
-If the user asks for recommendations, reply with exactly 2 titles. 
+If the user asks for recommendations, reply with exactly 3 titles. 
 Each should include a short 1-2 sentence description.
 Format your response like this:
 

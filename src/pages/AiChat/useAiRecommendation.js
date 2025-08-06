@@ -9,27 +9,56 @@ export const useAiRecommendation = () => {
     setLoading(true);
     // setResponse('');
 
+    // try {
+    //   const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    //     method: 'POST',
+    //     headers: {
+          
+    //     },
+    //     body: JSON.stringify({
+    //       model: 'gpt-3.5-turbo',
+    //       messages: [
+    //         { role: 'system', content: BASE_AI_PROMPT },
+    //         { role: 'user', content: userMessage },
+    //       ],
+    //       temperature: 0.7,
+    //     }),
+    //   });
+
+    //   const data = await res.json();
+    //     // setResponse(data.choices[0]?.message?.content || '');
+    //     console.log("response", data.choices[0]?.message?.content || '')
+    //     return data.choices[0]?.message?.content || '';
+    // } catch (err) {
+    //   console.error('AI Fetch Error:', err);
+    // } finally {
+    //   setLoading(false);
+    // }
+
     try {
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      const res = await fetch('/api/ai-recommendation', {
         method: 'POST',
-        headers: {
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            { role: 'system', content: BASE_AI_PROMPT },
-            { role: 'user', content: userMessage },
-          ],
-          temperature: 0.7,
+          userMessage,
+          prompt: BASE_AI_PROMPT,
         }),
       });
 
       const data = await res.json();
-        // setResponse(data.choices[0]?.message?.content || '');
-        console.log("response", data.choices[0]?.message?.content || '')
-        return data.choices[0]?.message?.content || '';
+
+      if (!res.ok) {
+        console.error('Server error:', data.error);
+        // setResponse('AI error occurred.');
+        return 'AI error occurred.';
+      }
+
+      // setResponse(data.result);
+      return data.result;
     } catch (err) {
-      console.error('AI Fetch Error:', err);
+      console.error('Request failed:', err);
+      // setResponse('Something went wrong.');
+      return 'Something went wrong.';
     } finally {
       setLoading(false);
     }

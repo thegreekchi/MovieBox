@@ -1,16 +1,4 @@
 export const parseAiResponse = (message) => {
-//   const lines = message.split('\n').filter(line => /^\d+\.\s+/.test(line));
-  
-//   return lines.map(line => {
-//     const match = line.match(/^\d+\.\s+(.*?)\s+[-–]\s+(.*)$/);
-//     if (!match) return null;
-
-//     const [, title, description] = match;
-//     return {
-//       title: title.trim(),
-//       description: description.trim(),
-//     };
-    //   }).filter(Boolean); // Remove nulls
     
     const lines = message.split("\n");
   return lines.map((line) => {
