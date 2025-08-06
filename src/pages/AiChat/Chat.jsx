@@ -20,7 +20,7 @@ const Chat = () => {
   const chatRef = useRef(null);
 
   useEffect(() => {
-    chatRef.current?.scrollIntoView({ behaviour: "smooth" });
+    chatRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
   const newChat = () => {
@@ -48,7 +48,7 @@ const Chat = () => {
       return (
         <div
           key={index}
-          className="flex gap-2 mb-4 mt-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-md rounded-br-none p-2 self-end sm:max-w-md max-w-[260px] shadow-md shadow-black/60 items-center font-Montserrat"
+          className="flex gap-2 mb-4 mt-2 bg-gradient-to-r mr-2 from-blue-700 to-blue-900 text-white rounded-md rounded-br-none p-2 self-end sm:max-w-md max-w-[260px] shadow-md shadow-black/60 items-center font-Montserrat"
         >
           <FaUserCircle size={18} />
           <div className="">{msg.content}</div>
@@ -58,12 +58,12 @@ const Chat = () => {
       const parsed = parseAiResponse(msg.content);
       return (
         <div key={index} className="">
-          <div className="flex gap-1 p-2  rounded-md rounded-bl-none my-1  sm:max-w-4xl max-w-[350px]">
+          <div className="flex gap-1 p-2 items-start  rounded-md rounded-bl-none my-1  sm:max-w-4xl max-w-[350px]">
             <img
               src="/chatgpt3.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[14px] sm:h-[20px] mt-2"
+              className="w-auto h-[18px] sm:h-[20px] mt-1"
             />
             <div className="font-Montserrat ">
               {parsed.map((p, i) =>
@@ -71,7 +71,7 @@ const Chat = () => {
                   <a
                     key={i}
                     href={p.link}
-                    className="block p-3 rounded-xl hover:bg-gray-200 bg-gray-100 transition duration-300 my-3"
+                    className="block p-3 rounded-xl hover:bg-gray-200 bg-gray-100 transition duration-300 md:my-3 my-2"
                   >
                     <span className="font-semibold">
                       {p.title}{" "}
@@ -84,7 +84,7 @@ const Chat = () => {
                 ) : (
                   <div
                     key={i}
-                    className="inline-block px-4 py-2 rounded-xl max-w-md"
+                    className="inline-block px-4 rounded-xl max-w-md"
                   >
                     {p.text}
                   </div>
@@ -111,17 +111,20 @@ const Chat = () => {
           <BiSolidMessageAdd className="text-xl" /> <span>New Chat</span>
         </div>
       </div>
-      <div className="mb-6 overflow-y-scroll flex-1 mt-2 scrollbar-hide px-4 text-sm sm:text-base">
+      <div className="mb-6 overflow-y-scroll flex-1 mt-2 scrollbar-hide px-4 text-base sm:text-lg">
         <div className="flex flex-col mb-10">
-          <div className="flex gap-5 p-2 mr-6">
+          <div className="flex gap-5 p-2 mr-4 mb-2">
             <img
               src="/chatgpt3.png"
               title="AI Chat"
               alt=""
-              className="w-auto h-[14px] sm:h-[20px]"
+              className="w-auto h-[18px] sm:h-[20px] mt-1"
             />
             <div className="font-medium">
-              Welcome to filmBox AI Chat. <br />
+              <span className="font-bold">
+                Welcome to filmBox AI Chat. 
+              </span>
+               <br />
               Tell me your mood, a story, or a scenario, and i&apos;ll find the
               perfect movie for you. <br />
               <span className="italic">
@@ -136,11 +139,11 @@ const Chat = () => {
               Thinking...
             </div>
           )}
-          <div ref={chatRef} />
+          <div ref={chatRef}  className="mb-8"/>
         </div>
       </div>
       <form action="" onSubmit={submit}>
-        <div className=" px-3 py-1 text-white text-sm sm:text-base focus-within:rounded-t-lg bg-gray-700 border border-gray-700 rounded-t-lg focus:outline-none focus-within:ring-1 focus-within:ring-[#D2AC47] group flex items-center transition-all overflow-hidden scrollbar-hide">
+        <div className=" px-3 py-1 fixed bottom-0 left-0 right-0 sm:right-10 sm:left-10  text-white text-sm sm:text-base focus-within:rounded-t-lg focus-within:sm:rounded-t-2xl bg-gray-700 border border-gray-700 rounded-t-lg sm:rounded-t-2xl focus:outline-none focus-within:ring-1 focus-within:ring-[#D2AC47] group flex items-center transition-all overflow-hidden scrollbar-hide">
           <TextareaAutosize
             minRows={1}
             maxRows={5}

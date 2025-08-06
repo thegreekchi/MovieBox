@@ -2,6 +2,7 @@
     "rewrites":[
         {
             "source":"/(.*)","destination":"/"
-        }
+        },
+        { "source": "/api/ai-recommendation", "destination": "/api/ai-recommendation.js" }
     ]
 }
