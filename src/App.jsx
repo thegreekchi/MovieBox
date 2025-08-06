@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 // import Layout from "./components/Layout";
 import TrendingMovies from "./pages/MovieRoutes/TrendingMovies";
@@ -16,9 +16,11 @@ import Bookmarks from "./pages/Bookmarks";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Scroll from "./components/Scroll";
 import Search from "./pages/Search";
-import Chat from "./pages/Chat";
+import Chat from "./pages/AiChat/Chat";
 
 function App() {
+  const location = useLocation();
+  const hideFooter = location.pathname === "/chat";
   return (
     <div className="min-h-screen flex flex-col">
       <Toaster
@@ -55,7 +57,7 @@ function App() {
           />
         </Routes>
       </main>
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 }

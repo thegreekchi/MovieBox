@@ -7,6 +7,7 @@ import { FaBookmark } from "react-icons/fa";
 
 const MenuMovies = ({ movie, type }) => {
   const { isBookmarked, toggleBookmarks, isAuth } = useContext(AuthContext);
+  console.log(movie);
   return (
     <div className="relative">
       <div
@@ -40,7 +41,11 @@ const MenuMovies = ({ movie, type }) => {
           </div>
           <div className="p-4">
             <div className="font-semibold text-sm sm:text-base line-clamp-2">
-              {movie.title || movie.name}
+              {movie.title || movie.name} (
+              {movie?.release_date?.slice(0, 4) ||
+                movie?.first_air_date?.slice(0, 4) ||
+                "Not available"}
+              )
             </div>
             <div className="text-xs sm:text-sm line-clamp-3 mt-2 sm:mt-3">
               {movie.overview}

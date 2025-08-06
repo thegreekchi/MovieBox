@@ -2,7 +2,16 @@ import { BiSolidMessageAdd } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import TextareaAutosize from "react-textarea-autosize";
+import { useAiRecommendation } from "./useAiRecommendation";
+import { useState } from "react";
 const Chat = () => {
+  const [input, setInput] = useState("");
+  const { getRecommendation } = useAiRecommendation();
+  const submit = (e) => {
+    e.preventDefault();
+    getRecommendation(input);
+    setInput("");
+  };
   return (
     <div className="p-6 pb-0 sm:pb-2 sm:px-10 px-0  md:mt-20 mt-[52px] sm:mt-16 h-[80vh] font-Montserrat relative flex flex-col ">
       <div className="font-bold flex justify-between pb-3 text-sm sm:text-base text-red-600 px-4">
@@ -24,11 +33,13 @@ const Chat = () => {
               className="w-auto h-[14px] sm:h-[20px]"
             />
             <div className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              consequuntur doloremque odio tenetur explicabo sequi aspernatur,
-              eaque officiis a? Velit reprehenderit, eaque iusto quo veniam
-              voluptate temporibus assumenda sit rem non error, aut, sapiente
-              recusandae consequatur asperiores debitis. Vero, nobis.
+              Welcome to filmBox AI Chat. <br />
+              Tell me your mood, a story, or a scenario, and i&apos;ll find the
+              perfect movie for you. <br />
+              <span className="italic">
+                e.g., &quot;Recommend something lighthearted for a rainy
+                day.&quot;{" "}
+              </span>
             </div>
           </div>
           <div className="flex gap-2 mb-4 mt-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-md rounded-br-none p-2 self-end sm:max-w-md max-w-[260px] shadow-md shadow-black/60">
@@ -102,17 +113,24 @@ const Chat = () => {
           </div>
         </div>
       </div>
-      <div className=" px-3 text-white text-sm sm:text-base focus-within:rounded-t-lg bg-gray-700 border border-gray-700 rounded-t-lg focus:outline-none focus-within:ring-1 focus-within:ring-[#D2AC47] group flex items-center transition-all">
-        <TextareaAutosize
-          minRows={1}
-          maxRows={5}
-          placeholder="Please type a message"
-          className="resize-none w-[96%] h-full placeholder-gray-300 block bg-transparent focus:outline-none py-3"
-        />
-        <button className="duration-300 group-focus-within:rotate-[40deg] hover:rotate-[40deg] mr-3 sm:mr-2 text-xl">
-          <IoIosSend />
-        </button>
-      </div>
+      <form action="" onSubmit={submit}>
+        <div className=" px-3 text-white text-sm sm:text-base focus-within:rounded-t-lg bg-gray-700 border border-gray-700 rounded-t-lg focus:outline-none focus-within:ring-1 focus-within:ring-[#D2AC47] group flex items-center transition-all">
+          <TextareaAutosize
+            minRows={1}
+            maxRows={5}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Please type a message"
+            className="resize-none w-[96%] h-full placeholder-gray-300 block bg-transparent focus:outline-none py-3"
+          />
+          <button
+            type="submit"
+            className="duration-300 group-focus-within:rotate-[40deg] hover:rotate-[40deg] mr-3 sm:mr-2 text-xl"
+          >
+            <IoIosSend />
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

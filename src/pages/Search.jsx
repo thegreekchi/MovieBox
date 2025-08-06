@@ -10,7 +10,6 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  // eslint-disable-next-line no-unused-vars
   const [totalPages, setTotalPages] = useState(1);
 
   console.log(results);
