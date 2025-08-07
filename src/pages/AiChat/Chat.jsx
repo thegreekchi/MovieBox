@@ -50,9 +50,9 @@ const Chat = () => {
       return (
         <div
           key={index}
-          className="flex gap-2 mb-4 mt-2 bg-gradient-to-r mr-2 from-blue-700 to-blue-900 text-white rounded-md rounded-br-none p-2 self-end sm:max-w-md max-w-[260px] shadow-md shadow-black/60 items-center font-Montserrat"
+          className="flex gap-2 mb-4 mt-2 bg-gradient-to-r mr-2 from-blue-700 to-blue-900 text-white rounded-md rounded-br-none p-2 self-end sm:max-w-md max-w-[260px] shadow-md shadow-black/60 items-start font-Montserrat"
         >
-          <FaUserCircle size={18} />
+          <FaUserCircle className="shrink-0 mt-1" size={20}/>
           <div className="">{msg.content}</div>
         </div>
       );
