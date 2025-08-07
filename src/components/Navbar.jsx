@@ -271,7 +271,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to=""
+                to="chat"
                 className="flex items-center
               hover:bg-gray-300
               duration-100 p-1"
