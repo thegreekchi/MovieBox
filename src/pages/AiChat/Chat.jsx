@@ -20,7 +20,9 @@ const Chat = () => {
   const chatRef = useRef(null);
 
   useEffect(() => {
-    chatRef.current?.scrollIntoView({ behavior: "smooth" });
+    if(messages.length>1){
+      chatRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, [messages, loading]);
 
   const newChat = () => {
@@ -111,7 +113,7 @@ const Chat = () => {
           <BiSolidMessageAdd className="text-xl" /> <span>New Chat</span>
         </div>
       </div>
-      <div className="mb-6 overflow-y-scroll flex-1 mt-2 scrollbar-hide px-4 text-base sm:text-lg">
+      <div className="mb-6 pb-3 overflow-y-auto flex-1 mt-2 scrollbar-hide px-4 text-base sm:text-lg">
         <div className="flex flex-col mb-10">
           <div className="flex gap-5 p-2 mr-4 mb-2">
             <img
