@@ -139,7 +139,7 @@ const Chat = () => {
               Thinking...
             </div>
           )}
-          <div ref={chatRef}  className="mb-8"/>
+          <div ref={chatRef}  className="mb-4"/>
         </div>
       </div>
       <form action="" onSubmit={submit}>
