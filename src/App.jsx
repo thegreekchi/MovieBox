@@ -45,7 +45,11 @@ function App() {
           <Route path="tvAiring" element={<TvAiring />} />
           <Route path="tvPopular" element={<TvPopular />} />
           <Route path="tvTopRated" element={<TvTopRated />} />
-          <Route path="chat" element={<Chat />} />
+          <Route path="chat" element={
+            <ProtectedRoutes>
+              <Chat />
+            </ProtectedRoutes>
+          } />
           <Route path="media/:type/:id" element={<MovieDetail />} />
           <Route
             path="bookmarks"
