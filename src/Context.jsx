@@ -46,12 +46,7 @@ const Context = ({ children }) => {
         );
         setBookmarkId(snapShot.docs.map((doc) => doc.id));
       });
-      // getDocs(bookmarkRef).then((snapShot) => {
-      //   setBookmarks(
-      //     snapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-      //   );
-      //   setBookmarkId(snapShot.docs.map((doc) => doc.id));
-      // });
+  
       return () => unsubscribe();
     }
   }, [isAuth]);
