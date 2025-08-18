@@ -143,11 +143,10 @@ const Chat = () => {
             </div>
           )}
           {remaining !== null && limit !== null && (
-      <p className="text-center text-gray-500 mt-2">
+      <p className="text-center text-gray-500 mt-3">
         {remaining} of {limit} requests left today
       </p>
     )}
-          <div className="text-center mt-2 font-light">Daily messages left : 3</div>
           <div ref={chatRef}  className="mb-4"/>
         </div>
       </div>

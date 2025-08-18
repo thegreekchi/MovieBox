@@ -52,6 +52,12 @@ export default async function handler(req, res) {
         });
       } else if (data.count >= 3) {
         return res.status(429).json({ error: "Daily limit reached", remaining: 0 });
+        //  return res.status(200).json({
+        //     success: false,
+        //     message: "🚫 You’ve reached your daily limit of 3 AI requests. Try again tomorrow.",
+        //     remaining: 0,
+        //     limit: 3,
+        //   });
       } else {
         remaining = 3 - data.count;
       }
@@ -87,6 +93,7 @@ export default async function handler(req, res) {
     });
 
     return res.status(200).json({
+      success: true,
       result: data.choices[0]?.message?.content || "",
       remaining: remaining - 1, // Return updated remaining count to UI
       limit: 3,

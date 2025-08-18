@@ -22,15 +22,20 @@ export const useAiRecommendation = () => {
       });
 
       const data = await res.json();
+      
+      // ✅ update UI states for rate limits
+      if (data.remaining !== undefined) setRemaining(data.remaining);
+      if (data.limit !== undefined) setLimit(data.limit);
+
+      if (res.status === 429) {
+        return `You’ve reached your daily limit of ${data.limit} requests. Please try again tomorrow.`;
+      }
 
       if (!res.ok) {
         console.error('Server error:', data.error);
         return 'AI error occurred.';
       }
 
-      // ✅ update UI states for rate limits
-      if (data.remaining !== undefined) setRemaining(data.remaining);
-      if (data.limit !== undefined) setLimit(data.limit);
 
       return data.result;
     } catch (err) {
