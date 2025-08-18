@@ -33,7 +33,7 @@ export const useAiRecommendation = () => {
 
       if (!res.ok) {
         console.error('Server error:', data.error);
-        return 'AI error occurred.';
+        return data.error || 'AI error occurred.'  ;
       }
 
 
