@@ -2,12 +2,13 @@ import { BiSolidMessageAdd } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import TextareaAutosize from "react-textarea-autosize";
-import { useAiRecommendation } from "./useAiRecommendation";
+import { useAiRecommendation } from "./useAiRecommendation1";
+// import { useAiRecommendation } from "./useAiRecommendation";
 import { useEffect, useRef, useState } from "react";
 import { parseAiResponse } from "./AiMessageParser";
 const Chat = () => {
   const [input, setInput] = useState("");
-  const { getRecommendation, loading } = useAiRecommendation();
+  const { getRecommendation, loading, remaining, limit } = useAiRecommendation();
   const [messages, setMessages] = useState(() => {
     const saved = localStorage.getItem("filmBoxChat");
     return saved ? JSON.parse(saved) : [];
@@ -141,6 +142,12 @@ const Chat = () => {
               Thinking...
             </div>
           )}
+          {remaining !== null && limit !== null && (
+      <p className="text-center text-gray-500 mt-2">
+        {remaining} of {limit} requests left today
+      </p>
+    )}
+          <div className="text-center mt-2 font-light">Daily messages left : 3</div>
           <div ref={chatRef}  className="mb-4"/>
         </div>
       </div>

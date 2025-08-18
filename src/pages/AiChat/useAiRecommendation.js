@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { auth } from '../../firebaseConfig';
 import { BASE_AI_PROMPT } from './promptTemplate';
 
 export const useAiRecommendation = () => {
@@ -41,6 +42,7 @@ export const useAiRecommendation = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userMessage,
+          userId: auth.currentUser.uid,
           prompt: BASE_AI_PROMPT,
         }),
       });
