@@ -32,14 +32,14 @@ export default async function handler(req, res) {
     const rateDocRef = db.collection("rateLimits").doc(userId);
     const rateDoc = await rateDocRef.get();
 
-    let remaining = 3;
+    let remaining = 5;
 
     if (!rateDoc.exists) {
       // New user — create record
       await rateDocRef.set({
         date: today,
         count: 0,
-        remaining: 3,
+        remaining: 5,
       });
     } else {
       const data = rateDoc.data();
@@ -48,18 +48,18 @@ export default async function handler(req, res) {
         await rateDocRef.set({
           date: today,
           count: 0,
-          remaining: 3,
+          remaining: 5,
         });
-      } else if (data.count >= 3) {
+      } else if (data.count >= 5) {
         return res.status(429).json({ error: "Daily limit reached", remaining: 0 });
         //  return res.status(200).json({
         //     success: false,
-        //     message: "🚫 You’ve reached your daily limit of 3 AI requests. Try again tomorrow.",
+        //     message: "🚫 You’ve reached your daily limit of 5 AI requests. Try again tomorrow.",
         //     remaining: 0,
-        //     limit: 3,
+        //     limit: 5,
         //   });
       } else {
-        remaining = 3 - data.count;
+        remaining = 5 - data.count;
       }
     }
 
@@ -96,7 +96,7 @@ export default async function handler(req, res) {
       success: true,
       result: data.choices[0]?.message?.content || "",
       remaining: remaining - 1, // Return updated remaining count to UI
-      limit: 3,
+      limit: 5,
     });
   } catch (error) {
     console.error("API error:", error);
