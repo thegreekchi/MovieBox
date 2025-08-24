@@ -101,23 +101,23 @@ Your app will be live at `http://localhost:5173`
 
 ### Home Page
 
-![Home Page](public\screenshots\home.png)
+![Home Page](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/home.png)
 
 ### Menu
 
-![Menu](public\screenshots\Nav.png)
+![Menu](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/Nav.png)
 
 ### Bookmarks
 
-![Bookmarks](public\screenshots\bookmarks.png)
+![Bookmarks](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/bookmarks.png)
 
 ### Search
 
-![Search page](public\screenshots\search.png)
+![Search page](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/search.png)
 
 ### Movie Details
 
-![Movie Details](public\screenshots\moviedetails.png)
+![Movie Details](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/moviedetails.png)
 
 ## 🗺️ Roadmap
 
