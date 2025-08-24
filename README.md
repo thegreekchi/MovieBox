@@ -111,7 +111,7 @@ Your app will be live at `http://localhost:5173`
 
 ![Bookmarks](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/bookmarks.png)
 
-### Search
+### Search Page
 
 ![Search page](https://github.com/thegreekchi/MovieBox/blob/main/public/screenshots/search.png)
 
@@ -121,8 +121,8 @@ Your app will be live at `http://localhost:5173`
 
 ## 🗺️ Roadmap
 
-- [] Dark/Light theme toggle
-- [] Multi-language support
+- [ ] Dark/Light theme toggle
+- [ ] Multi-language support
 
 ## 🤝 Contributing
 
