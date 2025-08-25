@@ -41,7 +41,7 @@ const Row = ({ title, url, link, type }) => {
       {error && <h1>{error}</h1>}
       {movies && (
         <div className="bg-slate-50 pt-2 sm:pt-3 ">
-          <div className=" w-[90%] mx-auto md:pt-4 pb-4 sm:pb-6">
+          <div className=" w-[92%] mx-auto md:pt-4 pb-4 sm:pb-6">
             <h2 className="text-black font-semibold text-base sm:text-lg pb-2 sm:tracking-wider tracking-wide font-Montserrat">
               {title}
             </h2>
@@ -52,7 +52,7 @@ const Row = ({ title, url, link, type }) => {
                 className="text-[#679267] z-10 cursor-pointer absolute -left-3 top-[30%] hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
               />
               <div
-                className="flex gap-4 w-full overflow-x-scroll scrollbar-hide scroll-smooth p-1"
+                className="flex gap-2 sm:gap-4 w-full overflow-x-scroll scrollbar-hide scroll-smooth p-1"
                 ref={scrollRef}
               >
                 {movies.map((movie) => (

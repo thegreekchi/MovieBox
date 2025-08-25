@@ -1,6 +1,7 @@
 import { MdOutlineSmartDisplay } from "react-icons/md";
 import useFetch from "../Hooks/UseFetch";
 import Conic from "./Conic";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { randomMovie, loading, error } = useFetch("movie/now_playing");
@@ -42,10 +43,12 @@ const Hero = () => {
               <h3 className="font-semibold text-xs sm:text-base pt-2">
                 Release date: {randomMovie.release_date}
               </h3>
-              <button className="bg-red-600 hover:bg-red-800 duration-300 text-xs sm:text-sm md:text-base text-white py-2 px-2 rounded-md font-bold mt-8 hover:ring-1 ring-offset-1">
-                View Trailer
-                <MdOutlineSmartDisplay className="inline-block ml-2 text-lg sm:text-xl md:text-2xl" />
-              </button>
+              <Link to={`/media/movie/${randomMovie.id}`}>
+                <button className="bg-red-600 hover:bg-red-800 duration-300 text-xs sm:text-sm md:text-base text-white py-2 px-2 rounded-md font-bold mt-8 hover:ring-1 ring-offset-1">
+                  View Trailer
+                  <MdOutlineSmartDisplay className="inline-block ml-2 text-lg sm:text-xl md:text-2xl" />
+                </button>
+              </Link>
             </div>
             <div className="absolute flex justify-center items-center bottom-[100px] right-10 sm:bottom-[30%] sm:right-[15%]">
               <Conic
