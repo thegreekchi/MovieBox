@@ -24,7 +24,7 @@ const Recommendations = ({ data }) => {
               className="text-[#679267] z-10 cursor-pointer absolute -left-3 top-[30%] hover:scale-125 duration-100  rounded-full ring-2 ring-[#679267] ring-offset-1"
             />
             <div
-              className="flex gap-6 w-full overflow-x-scroll scrollbar-hide scroll-smooth p-1"
+              className="flex gap-4 w-full overflow-x-scroll scrollbar-hide scroll-smooth p-1"
               ref={scrollRef}
             >
               {data?.recommendaqtions.map((recommendations) => (
