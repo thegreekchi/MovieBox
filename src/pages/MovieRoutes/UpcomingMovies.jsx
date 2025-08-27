@@ -12,7 +12,6 @@ const UpcomingMovies = () => {
     prevPage,
   } = useFetch("movie/upcoming");
   const Title = "Upcoming Movies";
-  console.log("Upcoming movie menu :", upcomingMovies);
   return (
     <MenuPages
       data={upcomingMovies}

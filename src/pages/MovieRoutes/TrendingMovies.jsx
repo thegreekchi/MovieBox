@@ -15,7 +15,6 @@ const TrendingMovies = () => {
     // setGenId,
   } = useFetch("trending/movie/week");
   const Title = "Trending Movies";
-  console.log("Trending movie menu :", trendingMovies);
   return (
     <MenuPages
       data={trendingMovies}

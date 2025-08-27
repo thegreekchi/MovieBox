@@ -10,7 +10,6 @@ const TvAiring = () => {
     prevPage,
   } = useFetch("tv/on_the_air");
   const Title = "Currently Airing Tv Shows";
-  console.log("Currently Airing :", currentlyAiring);
   return (
     <MenuPages
       data={currentlyAiring}

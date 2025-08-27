@@ -4,7 +4,6 @@ import Recomended from "./Recomended";
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 const Recommendations = ({ data }) => {
-  console.log("recommendations :", data?.recommendaqtions);
   const scrollRef = useRef();
   const scrollLeft = () => {
     scrollRef.current.scrollBy(-240, 0);

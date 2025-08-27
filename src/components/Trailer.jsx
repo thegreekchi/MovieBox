@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 const Trailer = ({ data }) => {
-  console.log("Trailer:", data?.trailer);
   return (
     <>
       <div className="w-[97%] sm:w-[90%] mx-auto mt-4">

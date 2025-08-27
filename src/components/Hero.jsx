@@ -24,7 +24,7 @@ const Hero = () => {
   const movie = movies?.[currentIndex];
 
   return (
-    <div className="relative h-[400px] sm:h-[500px] w-full overflow-hidden bg-black/95">
+    <div className="relative h-[400px] sm:h-[550px] w-full overflow-hidden bg-black/95">
       {loading && (
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
           <div className="h-[320px] sm:h-[450px] bg-black/70 relative overflow-hidden">
@@ -75,7 +75,7 @@ const Hero = () => {
 
             {/* Text Content */}
             <motion.div
-              className="absolute font-Montserrat text-white top-[26%] md:top-[25%] px-[35px] sm:px-[45px] py-3 sm:p-10"
+              className="absolute font-Montserrat text-white top-[26%] md:top-[26%] px-[35px] sm:px-[45px] py-3 sm:p-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

@@ -7,7 +7,6 @@ import { FaBookmark } from "react-icons/fa";
 
 const MenuMovies = ({ movie, type }) => {
   const { isBookmarked, toggleBookmarks, isAuth } = useContext(AuthContext);
-  console.log(movie);
   return (
     <div className="relative">
       <div

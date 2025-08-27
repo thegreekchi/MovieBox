@@ -15,7 +15,6 @@ const Row = ({ title, url, link, type }) => {
   const scrollRight = () => {
     scrollRef.current.scrollBy(240, 0);
   };
-  console.log(`${title}:`, movies);
 
   return (
     <>

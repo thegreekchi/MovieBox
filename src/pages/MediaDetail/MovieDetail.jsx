@@ -10,7 +10,6 @@ import Recommendations from "../../components/Recommendations";
 const MovieDetail = () => {
   const { type, id } = useParams();
   const { data, error } = UseMediaDetails(type, id);
-  console.log("movie details", data);
   return (
     <div className="font-Montserrat">
       {error && <h1>{error}</h1>}

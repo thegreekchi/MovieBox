@@ -11,7 +11,6 @@ const TopRatedMovies = () => {
     prevPage,
   } = useFetch("movie/top_rated");
   const Title = "Top Rated Movies";
-  console.log("TopRated movie menu :", topRatedMovies);
   return (
     <MenuPages
       data={topRatedMovies}

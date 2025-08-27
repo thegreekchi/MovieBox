@@ -8,7 +8,6 @@ const useFetch = (endpoint) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [randomMovie, setRandomMovie] = useState(null);
-  console.log("randomMovie:", randomMovie);
   const [currentPage, setCurrentPage] = useState(1);
   const [genre, setGenre] = useState([]);
   const [genreId, setGenreId] = useState("");
@@ -17,7 +16,6 @@ const useFetch = (endpoint) => {
     fetch(`${BASE_URL}genre/movie/list?api_key=${API_KEY}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Genres:", data.genres);
         setGenre(data.genres);
       });
 

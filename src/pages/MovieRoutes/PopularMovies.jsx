@@ -12,7 +12,6 @@ const PopularMovies = () => {
     prevPage,
   } = useFetch("movie/popular");
   const Title = "Popular Movies";
-  console.log("Popular movie menu :", popularMovies);
   return (
     <MenuPages
       data={popularMovies}
