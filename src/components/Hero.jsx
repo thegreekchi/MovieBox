@@ -87,7 +87,7 @@ const Hero = () => {
               <h3 className=" text-base sm:text-lg md:xl line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
                 {movie.overview}
               </h3>
-              <h3 className="font-semibold text-base sm:text-lg pt-2 text-gray-400">
+              <h3 className="font-semibold text-base sm:text-lg pt-2 ">
                 Release date: {movie.release_date}
               </h3>
               <Link to={`/media/movie/${movie.id}`}>
