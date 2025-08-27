@@ -75,19 +75,19 @@ const Hero = () => {
 
             {/* Text Content */}
             <motion.div
-              className="absolute font-Montserrat text-white top-[28%] md:top-[25%] px-[35px] sm:px-[45px] py-3 sm:p-10"
+              className="absolute font-Montserrat text-white top-[26%] md:top-[25%] px-[35px] sm:px-[45px] py-3 sm:p-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.1, delay: 0.1 }}
             >
-              <h1 className="font-bold text-base sm:text-xl md:text-3xl max-w-[80%] pb-1 line-clamp-2">
+              <h1 className="font-bold text-[17px] sm:text-xl md:text-3xl max-w-[80%] pb-1 line-clamp-2">
                 {movie.title}
               </h1>
-              <h3 className="font-semi-bold text-sm sm:text-base md:xl line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
+              <h3 className=" text-base sm:text-lg md:xl line-clamp-3 md:line-clamp-4 max-w-[70%] pt-1 sm:pt-2">
                 {movie.overview}
               </h3>
-              <h3 className="font-semibold text-xs sm:text-base pt-2">
+              <h3 className="font-semibold text-base sm:text-lg pt-2 text-gray-400">
                 Release date: {movie.release_date}
               </h3>
               <Link to={`/media/movie/${movie.id}`}>
