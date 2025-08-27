@@ -28,7 +28,7 @@ export const useAiRecommendation = () => {
       if (data.limit !== undefined) setLimit(data.limit);
 
       if (res.status === 429) {
-        return `You’ve reached your daily limit of 4 requests. Please try again tomorrow.`;
+        return `You’ve reached your daily limit of 3 requests. Please try again tomorrow.`;
       }
 
       if (!res.ok) {

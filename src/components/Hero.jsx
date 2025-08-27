@@ -24,7 +24,7 @@ const Hero = () => {
   const movie = movies?.[currentIndex];
 
   return (
-    <div className="relative h-[380px] sm:h-[500px] w-full overflow-hidden bg-black/95">
+    <div className="relative h-[400px] sm:h-[500px] w-full overflow-hidden bg-black/95">
       {loading && (
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
           <div className="h-[320px] sm:h-[450px] bg-black/70 relative overflow-hidden">
