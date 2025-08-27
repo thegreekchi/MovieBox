@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../Context";
+import { FaBookmark } from "react-icons/fa";
+
 /* eslint-disable react/prop-types */
-const DetailsHero = ({ data }) => {
+const DetailsHero = ({ data,type }) => {
+    const { isBookmarked, toggleBookmarks, isAuth } = useContext(AuthContext);
+  
   return (
     <>
       <div>
@@ -7,15 +13,25 @@ const DetailsHero = ({ data }) => {
       </div>
       <div>
         <div className="hidden md:flex w-[70%] ml-[5%]">
-          <img
-            className=" mt-4 rounded-md min-h-[350px] max-h-[400px] object-contain object-center shadow-lg shadow-black"
-            src={
-              data?.details?.poster_path
-                ? `https://image.tmdb.org/t/p/original/${data.details?.poster_path}`
-                : `https://image.tmdb.org/t/p/original/${data.details?.backdrop_path}`
-            }
-            alt=""
-          />
+          <div className="relative mt-4">
+            <div
+              className={`${
+                isAuth && isBookmarked(data.details) ? "text-[#ffca37]" : "text-white"
+              } absolute  flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-3 md:pt-5 pb-1 md:pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer`}
+              onClick={() => toggleBookmarks(data.details, type)}
+                  >
+              <FaBookmark className="" />
+            </div>
+            <img
+              className="  rounded-md min-h-[350px] max-h-[400px] object-contain object-center shadow-lg shadow-black"
+              src={
+                data?.details?.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${data.details?.poster_path}`
+                  : `https://image.tmdb.org/t/p/original/${data.details?.backdrop_path}`
+              }
+              alt=""
+            />
+          </div>
           <div className="text-base text-justify p-3 ml-5 flex flex-col items-start mt-[8%] justify-between">
             <div>
               <p className="font-bold tracking-tighter text-2xl ">
@@ -93,9 +109,17 @@ const DetailsHero = ({ data }) => {
         </div>
 
         <div className="flex mt-2 md:hidden w-[80%] mx-auto gap-4 tracking-tighter ">
-          <div className="relative">
+          <div className="relative mt-4">
+            <div
+              className={`${
+                isAuth && isBookmarked(data.details) ? "text-[#ffca37]" : "text-white"
+              } absolute  flex justify-center items-center top-[0%] right-[0%] bg-gray-900 opacity-90 px-[2px] pt-3 md:pt-5 pb-1 md:pb-2 z-10 border-2 rounded-sm rounded-tr-md border-white cursor-pointer`}
+              onClick={() => toggleBookmarks(data.details, type)}
+                  >
+              <FaBookmark className="" />
+            </div>
             <img
-              className=" mt-4 rounded-md  mx-auto min-h-[240px] max-h-[600px] sm:h-[300px] object-contain object-center md:hidden shadow-md shadow-black"
+              className="  rounded-md  mx-auto min-h-[240px] max-h-[600px] sm:h-[300px] object-contain object-center md:hidden shadow-md shadow-black"
               src={
                 data?.details?.poster_path
                   ? `https://image.tmdb.org/t/p/original/${data.details?.poster_path}`
