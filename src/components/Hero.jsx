@@ -16,7 +16,7 @@ const Hero = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % movies.length);
-    }, 9000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [movies]);
