@@ -79,7 +79,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.1, delay: 0.1 }}
+              transition={{ duration: 0.1, delay: 0.2 }}
             >
               <h1 className="font-bold text-[17px] sm:text-xl md:text-3xl max-w-[80%] pb-1 line-clamp-2">
                 {movie.title}
@@ -104,7 +104,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.1, delay: 0.1 }}
+              transition={{ duration: 0.1, delay: 0.2 }}
             >
               <Conic percentage={`${Math.round(movie.vote_average * 10)}`} />
             </motion.div>
